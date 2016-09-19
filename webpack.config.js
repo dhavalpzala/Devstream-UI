@@ -1,7 +1,7 @@
 module.exports = {
-  entry: './js/app.jsx',
+  entry: './src/js/app.jsx',
   output: {
-    path: __dirname + '/js',
+    path: __dirname + '/assets',
     filename: 'bundle.js'
   },
   resolve: {
@@ -19,5 +19,9 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    port: 8080,
+    host: 'localhost'
   }
 }
