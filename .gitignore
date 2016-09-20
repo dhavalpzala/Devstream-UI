@@ -1,4 +1,8 @@
 node_modules
 npm-debug.log
+
 assets
 dist
+
+nginx.conf
+nginx.pid
