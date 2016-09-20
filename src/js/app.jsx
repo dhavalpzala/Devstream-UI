@@ -1,10 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
- 
-class Hello extends React.Component {
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Router, Route, browserHistory } from 'react-router'
+import Home from './components/home'
+import GithubAuth from './components/github-auth'
+
+class App extends React.Component {
   render() {
-    return <h1>Home</h1>
+    return <div>
+      <Router history={ browserHistory }>
+        <Route path='/' component={ Home } />
+        <Route path='/github-auth' component={ GithubAuth } />
+      </Router>
+    </div>
   }
 }
- 
-ReactDOM.render(<Hello/>, document.getElementById('react-container'));
+
+ReactDOM.render(<App/>, document.getElementById('react-container'))
