@@ -1,5 +1,5 @@
 import React from 'react'
-import SocialConstants from '../constants/social-auth'
+import { GITHUB } from '../constants/social-auth'
 
 export default class Github extends React.Component {
   render () {
@@ -9,8 +9,8 @@ export default class Github extends React.Component {
   }
 
   openWindow () {
-    const clientId = SocialConstants.GITHUB.CLIENT_ID,
-      redirect_uri = window.location.origin + '/github-auth',
+    const clientId = GITHUB.CLIENT_ID,
+      redirect_uri = GITHUB.REDIRECT_URI,
       state = 'DCEeFWf45A53sdfKef424',
       scope = 'user user:email';
 
