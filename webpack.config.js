@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/js/app.jsx',
+  entry: './src/js/main.jsx',
   output: {
     path: __dirname + '/assets',
     filename: 'bundle.js'
@@ -22,6 +22,15 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    host: 'localhost'
+    host: 'localhost',
+    proxy: {
+      "/github-api": {
+        target: "https://github.com/",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/github-api": ""
+        }
+      }
+    }
   }
 }

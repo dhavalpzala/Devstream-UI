@@ -2,7 +2,7 @@
   "name": "devstream",
   "version": "0.0.1",
   "description": "",
-  "main": "js/app.jsx",
+  "main": "js/main.jsx",
   "scripts": {
     "build": "webpack",
     "server": "webpack-dev-server --output-public-path=/assets/ --content-base=public/ --hot --inline --open",
