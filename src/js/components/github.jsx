@@ -11,17 +11,17 @@ export default class Github extends React.Component {
   openWindow () {
     const clientId = GITHUB.CLIENT_ID,
       redirect_uri = GITHUB.REDIRECT_URI,
-      state = 'DCEeFWf45A53sdfKef424',
-      scope = 'user user:email';
+      state = GITHUB.STATE,
+      scope = GITHUB.SCOPE
 
     window.setGithubAccessToken = function (accessToken) {
       if(accessToken) {
-        console.log(accessToken);
+        console.log(accessToken)
       }
     }
 
     let url = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirect_uri)}&state=${state}&scope=${encodeURIComponent(scope)}`
 
-    window.open(url, '_githubAuth', 'resizable,scrollbars,status');
+    window.open(url, '_githubAuth', 'resizable,scrollbars,status')
   }
 }

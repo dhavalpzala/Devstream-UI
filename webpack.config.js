@@ -23,6 +23,7 @@ module.exports = {
   devServer: {
     port: 8080,
     host: 'cev3.pramati.com',
+    historyApiFallback: true,
     proxy: {
       "/github-api": {
         target: "https://github.com/",
