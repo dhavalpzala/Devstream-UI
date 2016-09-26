@@ -10,3 +10,7 @@ export const GITHUB = {
   REDIRECT_URI: `${BaseUrl}/#github-auth`,
   API_URL: `/github-api`
 }
+
+export const CAS = {
+  REDIRECT_URI: `https://cev3.pramati.com:8080/#cas-auth`
+}

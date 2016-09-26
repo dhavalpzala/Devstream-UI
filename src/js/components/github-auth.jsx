@@ -1,11 +1,11 @@
 import React from 'react'
 import { GITHUB } from '../constants/social-auth'
 import request from 'superagent'
-import { getCode } from '../utils/functions'
+import { getQueryParameterByName } from '../utils/functions'
 
 export default class GithubAuth extends React.Component {
   componentDidMount () {
-    var code = getCode('code');
+    var code = getQueryParameterByName('code');
     if (code) {
         const clientId = GITHUB.CLIENT_ID,
           clientSecret = GITHUB.CLIENT_SECRET,
