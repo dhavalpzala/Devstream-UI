@@ -21,5 +21,5 @@ export const STACKOVERFLOW = {
   CLIENT_ID: '7932',
   REDIRECT_URI: `${BaseUrl}/stackoverflow-auth`,
   STATE: 'DCEeFWf45A53sdfKef424',
-  SCOPE: 'read_inbox'
+  SCOPE: 'no_expiry'
 }

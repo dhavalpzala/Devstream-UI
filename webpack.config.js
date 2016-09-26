@@ -22,7 +22,7 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    host: 'cev3.pramati.com',
+    host: 'devstream.imaginea.com',
     historyApiFallback: true,
     proxy: {
       "/github-api": {
