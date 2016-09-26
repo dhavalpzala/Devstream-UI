@@ -3,6 +3,11 @@
 UI for Devstream - Ticker for dev activity
 
 ### Setup
+- Add our domain entry in host file
+``` bash
+sudo vi /etc/hosts (for linux users)
+127.0.0.1 devstream.imaginea.com
+```
 - Install `nodejs` for your platform
 - Install `webpack` and `webpack-dev-server`
 ``` bash
