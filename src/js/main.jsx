@@ -7,6 +7,9 @@ import GithubAuth from './components/github-auth'
 import CasAuth from './components/cas-auth'
 import StackOverflowAuth from './components/stackoverflow-auth'
 
+// import css files
+import '../css/app.scss'
+
 // for supporting deep linking to browserHistory
 __webpack_public_path__ = "/"
 
