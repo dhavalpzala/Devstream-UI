@@ -17,6 +17,10 @@ module.exports = {
           cacheDirectory: true,
           presets: ['react', 'es2015']
         }
+      },
+      {
+        test: /\.scss$/,
+        loader: "style!css!autoprefixer!sass"
       }
     ]
   },
