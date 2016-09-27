@@ -1,6 +1,7 @@
-import React from 'react';
-import Header from './header';
-import Footer from './footer';
+import React from 'react'
+import Header from './header'
+import Footer from './footer'
+import AppAction from '../actions/app.action'
 
 export default class App extends React.Component {
 
@@ -16,3 +17,6 @@ export default class App extends React.Component {
     );
   }
 }
+
+// to get activities
+AppAction.getActivities()
