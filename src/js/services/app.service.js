@@ -1,5 +1,5 @@
 import WebAPI from '../api/webapi'
-import ActivityAdapter from '../adapters/activity.adapter'
+import ACTIVITY_TYPES from '../constants/activity_types'
 
 const AppService = {
     getActivities() {
@@ -8,8 +8,8 @@ const AppService = {
                 if (err) {
                     reject(err)
                 } else {
-                    let result = ActivityAdapter.convert(res.body)
-                    resolve(result)
+                    //resolve(res.body)
+                    resolve(mockData)
                 }
             })
         })
@@ -19,3 +19,21 @@ const AppService = {
 }
 
 export default AppService
+
+// mock data
+var mockData = [{
+    'id': 1,
+    'type': ACTIVITY_TYPES.GIT_COMMIT,
+    'data': {
+        'header': 'Header 1',
+        'description': 'description 1'
+    }
+},
+{
+    'id': 2,
+    'type': ACTIVITY_TYPES.GIT_COMMIT,
+    'data': {
+        'header': 'Header 2',
+        'description': 'description 2'
+    }
+}]

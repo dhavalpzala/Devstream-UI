@@ -1,6 +1,6 @@
 import AppDispatcher from '../dispatchers/app.dispatcher'
 import AppService from '../services/app.service'
-import ACTION_TYPES from '../constants/action-types'
+import ACTION_TYPES from '../constants/action_types'
 
 const AppAction = {
     getActivities() {

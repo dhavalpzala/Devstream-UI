@@ -1,7 +1,7 @@
 import React from 'react'
-import { GITHUB } from '../constants/social-auth'
+import { GITHUB } from '../../constants/social_auth'
 import request from 'superagent'
-import { getQueryParameterByName } from '../utils/functions'
+import { getQueryParameterByName } from '../../utils/functions'
 
 export default class GithubAuth extends React.Component {
   componentDidMount () {
