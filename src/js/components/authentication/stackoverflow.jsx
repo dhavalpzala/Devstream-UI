@@ -1,5 +1,5 @@
 import React from 'react'
-import { STACKOVERFLOW } from '../constants/social-auth'
+import { STACKOVERFLOW } from '../../constants/social_auth'
 
 export default class StackOverflow extends React.Component {
   render () {

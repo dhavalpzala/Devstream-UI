@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import App from './components/app'
 import Home from './components/home'
-import GithubAuth from './components/github-auth'
-import CasAuth from './components/cas-auth'
-import StackOverflowAuth from './components/stackoverflow-auth'
+import GithubAuth from './components/authentication/github_auth'
+import CasAuth from './components/authentication/cas_auth'
+import StackOverflowAuth from './components/authentication/stackoverflow_auth'
 
 // import css files
 import '../css/app.scss'

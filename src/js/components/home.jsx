@@ -1,8 +1,10 @@
 import React from 'react'
-import Github from './github'
-import Cas from './cas'
-import StackOverflow from './stackoverflow'
+import Github from './authentication/github'
+import Cas from './authentication/cas'
+import StackOverflow from './authentication/stackoverflow'
 import appStoreInstance from '../stores/app.store'
+import ACTIVITY_TYPES from '../constants/activity_types'
+import GitCommitActivity from './activities/git_commit'
 
 export default class Home extends React.Component {
 
@@ -15,14 +17,29 @@ export default class Home extends React.Component {
   }
 
   componentDidMount () {
-    appStoreInstance.addChangeListener(this._onChange)
+    appStoreInstance.addChangeListener(() => {
+      this.setState({
+        activities: appStoreInstance.activities 
+      })
+    })
   }
 
   render () {
-    return <div><Github/><Cas/><StackOverflow/></div>
-  }
+    let activities = []
 
-  _onChange () {
-    console.log(appStoreInstance.activities)
-  }
+    if (this.state.activities) {
+      this.state.activities.forEach((activity) => {
+        switch (activity.type) {
+          case ACTIVITY_TYPES.GIT_COMMIT:
+            activities.push(<GitCommitActivity key={ activity.id } data={ activity.data } />)
+            break
+        }
+      })
+    }
+    
+    return (<div>
+      <Github/><Cas/><StackOverflow/>
+      <div className='activities'>{ activities }</div>
+    </div>)
+  } 
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { GITHUB } from '../constants/social-auth'
+import { GITHUB } from '../../constants/social_auth'
 
 export default class Github extends React.Component {
   render () {

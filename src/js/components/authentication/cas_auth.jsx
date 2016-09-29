@@ -1,5 +1,5 @@
 import React from 'react'
-import { getQueryParameterByName } from '../utils/functions'
+import { getQueryParameterByName } from '../../utils/functions'
 
 export default class CasAuth extends React.Component {
   componentDidMount () {

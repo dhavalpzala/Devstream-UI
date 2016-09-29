@@ -1,7 +1,7 @@
 import AppDispatcher from '../dispatchers/app.dispatcher'
 import AppAction from '../actions/app.action'
 import EventEmitter from 'events'
-import ACTION_TYPES from '../constants/action-types'
+import ACTION_TYPES from '../constants/action_types'
 
 const CHANGE_EVENT = 'change'
 

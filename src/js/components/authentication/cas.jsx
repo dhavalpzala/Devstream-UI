@@ -1,5 +1,5 @@
 import React from 'react'
-import { CAS } from '../constants/social-auth'
+import { CAS } from '../../constants/social_auth'
 
 export default class Cas extends React.Component {
   render () {
