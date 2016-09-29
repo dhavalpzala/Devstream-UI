@@ -1,0 +1,75 @@
+.activities {
+  display: inline-block;
+  width: calc(100% - 250px);
+
+  .activity {
+    position: relative;
+    padding-bottom: 15px;
+
+    .activity-logo {
+      width: 80px;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+
+      .activity-logo-image {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        border: 4px solid lightskyblue;
+        position: relative;
+        z-index: 10;
+        background: white;
+      }
+      .activity-logo-vline {
+        position: absolute;
+        left: 16.5px;
+        top: 0;
+        height: 100%;
+        width: 10px;
+        background: lightskyblue;
+      }
+      .activity-logo-hline {
+        position: absolute;
+        left: 30px;
+        top: 16.5px;
+        height: 10px;
+        width: 100%;
+        background: lightskyblue;
+      }
+    }
+    .activity-content {
+      background: white;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      margin-left: 80px;
+
+      .activity-header {
+        padding: 10px;
+        border-bottom: 1px solid lightgray;
+      }
+      .activity-description {
+        padding: 10px;
+        background: #f3f3f3;
+      }
+    }
+  }
+}
+
+.trending-projects {
+  display: inline-block;
+  margin-left: 50px;
+  width: 200px;
+  vertical-align: top;
+
+  .trending-projects-title {
+    text-align: center;
+    padding: 10px 0px;
+  }
+  .trending-project {
+    border: 1px solid lightgrey;
+    padding: 7.5px 15px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+}

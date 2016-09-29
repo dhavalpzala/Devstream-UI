@@ -4,7 +4,6 @@ import Footer from './footer'
 import AppAction from '../actions/app.action'
 
 export default class App extends React.Component {
-
   render() {
     return (
       <div>

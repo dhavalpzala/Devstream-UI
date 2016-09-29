@@ -4,7 +4,7 @@ import { CAS } from '../../constants/social_auth'
 export default class Cas extends React.Component {
   render () {
     return (
-      <button onClick={this.openWindow}>CAS</button>
+      <div className="pointer" onClick={this.openWindow}>Login</div>
     )
   }
 
