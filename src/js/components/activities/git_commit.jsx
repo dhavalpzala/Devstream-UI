@@ -7,7 +7,7 @@ export default class GitCommitActivity extends React.Component {
   render() {
     return (<div className="activity git-commit">
         <div className="activity-logo">
-          <div className="activity-logo-image"></div>
+          <div className="activity-logo-image"><i className="fa fa-github" aria-hidden="true"></i></div>
           <div className="activity-logo-vline"></div>
           <div className="activity-logo-hline"></div>
         </div>
