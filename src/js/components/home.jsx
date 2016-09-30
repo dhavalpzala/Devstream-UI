@@ -1,31 +1,29 @@
 import React from 'react'
-import Github from './authentication/github'
-import Cas from './authentication/cas'
-import StackOverflow from './authentication/stackoverflow'
 import appStoreInstance from '../stores/app.store'
 import ACTIVITY_TYPES from '../constants/activity_types'
 import GitCommitActivity from './activities/git_commit'
 
 export default class Home extends React.Component {
-
   constructor () {
     super()
 
     this.state = {
-      activities: appStoreInstance.activities 
+      activities: appStoreInstance.activities,
+      projects: ["kodeBeagle", "Papyrus", "mViewer"] 
     }
   }
 
   componentDidMount () {
     appStoreInstance.addChangeListener(() => {
       this.setState({
-        activities: appStoreInstance.activities 
+        activities: appStoreInstance.activities
       })
     })
   }
 
   render () {
-    let activities = []
+    let activities = [],
+      projects = [] 
 
     if (this.state.activities) {
       this.state.activities.forEach((activity) => {
@@ -37,9 +35,18 @@ export default class Home extends React.Component {
       })
     }
     
+    if (this.state.projects) {
+      this.state.projects.forEach((project) => {
+        projects.push(<div className='trending-project'>{ project }</div>)
+      })
+    }
+
     return (<div>
-      <Github/><Cas/><StackOverflow/>
       <div className='activities'>{ activities }</div>
+      <div className='trending-projects'>
+        <div className="trending-projects-title">Trending Projects</div>
+        { projects }
+      </div>
     </div>)
   } 
 }

@@ -36,4 +36,20 @@ var mockData = [{
         'header': 'Header 2',
         'description': 'description 2'
     }
+},
+{
+    'id': 3,
+    'type': ACTIVITY_TYPES.GIT_COMMIT,
+    'data': {
+        'header': 'Header 3',
+        'description': 'description 3'
+    }
+},
+{
+    'id': 4,
+    'type': ACTIVITY_TYPES.GIT_COMMIT,
+    'data': {
+        'header': 'Header 4',
+        'description': 'description 4'
+    }
 }]
