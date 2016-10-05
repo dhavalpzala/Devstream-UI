@@ -6,10 +6,12 @@ export default class Header extends React.Component {
   render() {
     return (
       <header>
-        <div className="header-title"><Link to="/">DevStream</Link></div>
-        <div className="header-links">
-          <Link to="profile">Profile</Link>
-          <div className="header-link"><Cas/></div>
+        <div>
+          <div className="header-title"><Link to="/">DevStream</Link></div>
+          <div className="header-links">
+            <Link to="profile">Profile</Link>
+            <div className="header-link"><Cas/></div>
+          </div>
         </div>
       </header>
     )

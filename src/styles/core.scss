@@ -1,7 +1,7 @@
 html {
-  max-width: 1200px;
   margin: 0px auto;
   height:100%;
+  background: #f9f5f0;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background: #333;
+  background: #fc9d49;
   margin-bottom: 20px;
   color: white;
   padding: 15px 25px;
@@ -40,4 +40,9 @@ header {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.routerView, header > div {
+  max-width: 1200px;
+  margin: 0 auto;
 }

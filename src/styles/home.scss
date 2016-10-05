@@ -1,6 +1,8 @@
 .activities {
   display: inline-block;
-  width: calc(100% - 250px);
+  width: calc(100% - 251px);
+  padding-right: 25px;
+  border-right: 1px solid #efe8dc;
 
   .activity {
     position: relative;
@@ -61,7 +63,7 @@
 
 .trending-projects {
   display: inline-block;
-  margin-left: 50px;
+  margin-left: 25px;
   width: 200px;
   vertical-align: top;
 
