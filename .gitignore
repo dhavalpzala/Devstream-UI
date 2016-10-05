@@ -1,4 +1,14 @@
+# mac specific files
+.DS_Store
+
+# IDE Config files
+.idea
+.vscode
+
+# Node related files
 node_modules
 npm-debug.log
+
+# Project files
 assets
 dist

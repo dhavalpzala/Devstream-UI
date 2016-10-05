@@ -36,8 +36,8 @@ export default class Home extends React.Component {
     }
     
     if (this.state.projects) {
-      this.state.projects.forEach((project) => {
-        projects.push(<div className='trending-project'>{ project }</div>)
+      this.state.projects.forEach((project, idx) => {
+        projects.push(<div className='trending-project'>#{ project }</div>)
       })
     }
 
