@@ -1,0 +1,32 @@
+import React from 'react';
+
+let Logo;
+export default Logo = () => (
+  <svg id="devstreamLogo" viewBox="0 0 250 128" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="logo-gradient" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stopColor="#FF6B6B">
+              <animate attributeName="stop-color" values="#FF6B6B; #845EF7; #FF6B6B" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
+            </stop>
+            <stop offset="16.66%" stopColor="#FF922B">
+              <animate attributeName="stop-color" values="#FF922B; #5C7CFA; #FF922B" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
+            </stop>
+            <stop offset="33.32%" stopColor="#FCC419">
+              <animate attributeName="stop-color" values="#FCC419; #329AF0; #FCC419" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
+            </stop>
+            <stop offset="50%" stopColor="#51CF66">
+            </stop>
+            <stop offset="66.66%" stopColor="#329AF0">
+              <animate attributeName="stop-color" values="#329AF0; #FCC419; #329AF0" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
+            </stop>
+            <stop offset="83.32%" stopColor="#5C7CFA">
+              <animate attributeName="stop-color" values="#5C7CFA; #FF922B; #5C7CFA" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
+            </stop>
+            <stop offset="100%" stopColor="#845EF7">
+              <animate attributeName="stop-color" values="#845EF7; #FF6B6B; #845EF7" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
+            </stop>
+        </linearGradient>
+    </defs>
+    <path id="text1336" d="M 232.746 62.522 C 232.746 77.188 227.177 89.563 216.043 99.647 C 205.017 109.647 191.842 114.647 176.518 114.647 C 165.714 114.647 155.791 112.147 146.751 107.147 C 137.709 102.063 129.496 94.522 122.109 84.522 C 115.935 94.772 108.438 102.355 99.619 107.272 C 90.799 112.105 81.262 114.522 71.009 114.522 C 54.581 114.522 41.13 109.772 30.657 100.272 C 20.293 90.688 15.112 78.147 15.112 62.647 C 15.112 47.563 20.68 35.105 31.816 25.272 C 42.949 15.438 56.126 10.522 71.339 10.522 C 82.034 10.522 91.846 12.98 100.777 17.897 C 109.816 22.813 118.141 30.397 125.748 40.647 C 131.59 30.73 138.922 23.272 147.743 18.272 C 156.673 13.188 166.375 10.647 176.849 10.647 C 193.387 10.647 206.837 15.438 217.201 25.022 C 227.564 34.605 232.746 47.105 232.746 62.522 M 218.523 62.897 C 218.523 53.563 214.83 46.147 207.443 40.647 C 200.167 35.147 190.576 32.397 178.668 32.397 C 167.532 32.397 157.941 33.772 149.893 36.522 C 141.844 39.272 135.725 43.355 131.536 48.772 C 140.136 64.188 148.073 75.313 155.351 82.147 C 162.736 88.98 172.108 92.397 183.464 92.397 C 194.378 92.397 202.922 89.605 209.097 84.022 C 215.382 78.438 218.523 71.397 218.523 62.897 M 116.322 76.397 C 107.612 60.647 99.508 49.438 92.012 42.772 C 84.624 36.105 75.419 32.772 64.394 32.772 C 53.479 32.772 44.879 35.563 38.596 41.147 C 32.421 46.73 29.334 53.688 29.334 62.022 C 29.334 71.438 33.027 78.938 40.414 84.522 C 47.801 90.022 57.392 92.772 69.19 92.772 C 79.884 92.772 89.42 91.355 97.799 88.522 C 106.179 85.688 112.353 81.647 116.322 76.397" style={{fontSize: '256px', fontStyle: 'normal', fontVariantLigatures: 'normal', fontVariantCaps: 'normal', fontWeight: 'normal', fontStretch: 'normal', textAlign: 'start', lineHeight: '100%', writingMode: 'lrtb', textAnchor: 'start', fillOpacity: '1', stroke: 'none', strokeWidth: '1px', strokeLineCap: 'butt', strokeLineJoin: 'miter', strokeOpacity: '1', fontFamily: 'Georgia', fill: 'url(#logo-gradient)'}} />
+</svg>
+);

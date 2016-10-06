@@ -1,61 +1,66 @@
 .activities {
   display: inline-block;
-  width: calc(100% - 251px);
-  padding-right: 25px;
-  border-right: 1px solid #efe8dc;
+  width: calc(100% - 216px);
+  height: calc(100vh - 35px);
+  padding: 24px 12px;
 
   .activity {
     position: relative;
     padding-bottom: 15px;
 
     .activity-logo {
-      width: 80px;
+      width: 60px;
       height: 100%;
       position: absolute;
       overflow: hidden;
-      line-height: 35px;
+      line-height: 36px;
       text-align: center;
-      font-size: 20px;
+      font-size: 32px;
       
       .activity-logo-image {
-        height: 35px;
-        width: 35px;
+        height: 36px;
+        width: 36px;
+        margin-left: 10px;
         border-radius: 50%;
-        border: 4px solid lightskyblue;
         position: relative;
         z-index: 10;
-        background: white;
+        background: #f9f5f0;
       }
       .activity-logo-vline {
         position: absolute;
-        left: 16.5px;
+        left: 25px;
         top: 0;
         height: 100%;
-        width: 10px;
-        background: lightskyblue;
+        width: 6px;
+        background: #f9f5f0;
       }
       .activity-logo-hline {
         position: absolute;
         left: 30px;
-        top: 16.5px;
-        height: 10px;
+        top: 15px;
+        height: 8px;
         width: 100%;
-        background: lightskyblue;
+        background: #f9f5f0;
       }
     }
     .activity-content {
       background: white;
-      border: 1px solid lightgray;
-      border-radius: 5px;
-      margin-left: 80px;
+      border-radius: 2px;
+      margin-left: 60px;
+      background: #f9f5f0;
 
-      .activity-header {
-        padding: 10px;
-        border-bottom: 1px solid lightgray;
-      }
+      .activity-header,
       .activity-description {
         padding: 10px;
-        background: #f3f3f3;
+      }
+
+      .activity-header {
+        color: #7f3f6a;
+        cursor: pointer;
+
+        &:hover {
+          color: #4c263f;
+        }
       }
     }
   }
@@ -63,18 +68,29 @@
 
 .trending-projects {
   display: inline-block;
-  margin-left: 25px;
-  width: 200px;
+  padding: 12px;
+  width: 216px;
+  height: calc(100vh - 35px);
   vertical-align: top;
+  position: fixed;
+  background: #f9f5f0;
+  border-left: 1px solid #efe8dc;
+  color: #7f3f6a;
 
   .trending-projects-title {
-    text-align: center;
-    padding: 10px 0px;
+    padding: 4px 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #efe8dc;
+    font-weight: bold;
   }
   .trending-project {
-    border: 1px solid lightgrey;
-    padding: 7.5px 15px;
-    border-radius: 5px;
+    padding: 0 12px;
+    cursor: pointer;
     margin-bottom: 5px;
+
+    &:hover {
+      color: #f39020;
+      background: #fff;
+    }
   }
 }
