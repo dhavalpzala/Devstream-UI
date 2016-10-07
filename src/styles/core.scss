@@ -6,7 +6,7 @@
 }
 
 html {
-  margin: 0px auto;
+  margin: 0 auto;
   height:100%;
 //  background: #f9f5f0;
 }
@@ -27,9 +27,9 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 35px;
   border-bottom: 1px solid #f39020;
   z-index: 100;
+  padding: 5px 0;
 
   .header-title {
     font-weight: bold;
@@ -58,8 +58,47 @@ header {
       display: inline-block;
     }
 
-    & > * {
-      padding: 7px 12px;
+    .header-login-link {
+      margin-top: 5px;
+    }
+  }
+  .header-user {
+    cursor: pointer;
+    position: relative;
+    min-width: 100px;
+
+    .header-user-img {
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+
+      /* for default image */
+      text-align: center;
+      font-size: 25px;
+      line-height: 30px;
+    }
+
+    .header-user-name {
+      display: inline-block;
+      vertical-align: top;
+      margin: 5px 0px 0px 5px;
+    }
+
+    .header-user-links {
+      position: absolute;
+      width: 100%;
+      background: antiquewhite;
+      border: 1px solid burlywood;
+      margin-top: 5px;
+
+      .header-user-link {
+        padding: 5px 10px;
+        border-bottom: 1px solid burlywood;
+      }
+
+      .header-user-link:last-child {
+        border-bottom: none;
+      }
     }
   }
 }
@@ -84,11 +123,15 @@ a {
 }
 
 .routerView {
-  margin-top: 35px !important;
+  margin-top: 45px !important;
 }
 
 .routerView,
 header > div {
   max-width: 1080px;
   margin: 0 auto;
+}
+
+.hidden {
+  display: none;
 }

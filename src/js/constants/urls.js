@@ -1,2 +1,2 @@
 export const BaseUrl = window.location.origin
-export const APIUrl = 'https://demo6221170.mockable.io'
+export const APIUrl = '/devstream-api/api/v1'

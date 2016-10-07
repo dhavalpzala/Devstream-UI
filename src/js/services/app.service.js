@@ -2,20 +2,34 @@ import WebAPI from '../api/webapi'
 import ACTIVITY_TYPES from '../constants/activity_types'
 
 const AppService = {
-    getActivities() {
-        var promise = new Promise((resolve, reject) => {
-            WebAPI.getActivities().then((res, err) => {
-                if (err) {
-                    reject(err)
-                } else {
-                    //resolve(res.body)
-                    resolve(mockData)
-                }
-            })
-        })
+  login(accessToken) {
+    var promise = new Promise((resolve, reject) => {
+      WebAPI.login(accessToken).then((res, err) => {
+        if (err) {
+          reject(err)
+        } else {
+          resolve(res.body)
+        }
+      })
+    })
 
-        return promise
-    }
+    return promise
+  },
+
+  getActivities() {
+    var promise = new Promise((resolve, reject) => {
+      resolve(mockData)
+      // WebAPI.getActivities().then((res, err) => {
+      //   if (err) {
+      //     reject(err)
+      //   } else {
+      //     resolve(res.body)
+      //   }
+      // })
+    })
+
+    return promise
+  }
 }
 
 export default AppService
