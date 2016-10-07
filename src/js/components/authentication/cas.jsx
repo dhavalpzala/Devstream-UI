@@ -1,6 +1,6 @@
 import React from 'react'
 import { CAS } from '../../constants/social_auth'
-
+import AppAction from '../../actions/app.action'
 export default class Cas extends React.Component {
   render () {
     return (
@@ -13,7 +13,7 @@ export default class Cas extends React.Component {
 
     window.setCasAccessToken = function (accessToken) {
       if(accessToken) {
-        console.log(accessToken);
+        AppAction.login(accessToken)
       }
     }
 

@@ -10,6 +10,7 @@ export class AppStore extends EventEmitter {
         super()
 
         this.activities = null
+        this.isLoggedIn = false
     }
 
     emitChange() {
@@ -29,6 +30,16 @@ let appStoreInstance = new AppStore()
 
 appStoreInstance.dispatchToken = AppDispatcher.register(action => {
   switch(action.type) {
+    case ACTION_TYPES.LOGGEDIN:
+        appStoreInstance.isLoggedIn = true
+        appStoreInstance.emitChange()
+        break
+
+    case ACTION_TYPES.LOGGEDOUT:
+        appStoreInstance.isLoggedIn = false
+        appStoreInstance.emitChange()
+        break
+
     case ACTION_TYPES.GET_ACTIVITIES:
         appStoreInstance.activities = action.data
         appStoreInstance.emitChange()

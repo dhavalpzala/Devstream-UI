@@ -30,10 +30,17 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       "/github-api": {
-        target: "https://github.com/",
+        target: "https://github.com",
         changeOrigin: true,
         pathRewrite: {
           "^/github-api": ""
+        }
+      },
+      "/devstream-api": {
+        target: "http://172.16.55.187:9000",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/devstream-api": ""
         }
       }
     }
