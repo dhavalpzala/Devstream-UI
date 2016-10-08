@@ -3,6 +3,7 @@ import Cas from './authentication/cas'
 import Logo from './logo'
 import { Link } from 'react-router'
 import appStoreInstance from '../stores/app.store'
+import AppAction from '../actions/app.action'
 
 export default class Header extends React.Component {
   constructor () {
@@ -20,8 +21,8 @@ export default class Header extends React.Component {
     appStoreInstance.addChangeListener(() => {
       this.setState({
         isLoggedIn: appStoreInstance.isLoggedIn,
-        firstName: 'Saina',
-        lastName: 'Nehwal',
+        firstName: appStoreInstance.user ? appStoreInstance.user.firstName : '',
+        lastName: appStoreInstance.user ? appStoreInstance.user.lastName : '',
         showMenu: false
       })
     })
@@ -30,6 +31,10 @@ export default class Header extends React.Component {
   toggleMenu() {
     let showMenu = !this.state.showMenu
     this.setState({ showMenu })
+  }
+
+  logout() {
+    AppAction.logout()
   }
 
   render() {
@@ -50,7 +55,7 @@ export default class Header extends React.Component {
                   <div className="header-user-name"> { this.state.firstName + ' ' + this.state.lastName } </div> 
                   <div className={ this.state.showMenu ? 'header-user-links' : 'hidden'}>
                     <div className="header-user-link"><Link to="profile">Profile</Link></div>
-                    <div className="header-user-link">Logout</div>
+                    <div className="header-user-link" onClick={ this.logout }>Logout</div>
                   </div>
                 </div>)
               } else {

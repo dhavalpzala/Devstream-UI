@@ -10,7 +10,12 @@ export class AppStore extends EventEmitter {
         super()
 
         this.activities = null
-        this.isLoggedIn = false
+        this.isLoggedIn = AppAction.isLoggedIn()
+
+        // get user
+        if (this.isLoggedIn) {
+          this.user = AppAction.getUser()
+        }
     }
 
     emitChange() {
@@ -32,6 +37,7 @@ appStoreInstance.dispatchToken = AppDispatcher.register(action => {
   switch(action.type) {
     case ACTION_TYPES.LOGGEDIN:
         appStoreInstance.isLoggedIn = true
+        appStoreInstance.user = action.data
         appStoreInstance.emitChange()
         break
 

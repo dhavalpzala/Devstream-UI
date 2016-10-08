@@ -18,6 +18,19 @@ const AppAction = {
     return promise
   },
 
+  logout() {
+    AppService.logout()
+    AppDispatcher.dispatch({ type: ACTION_TYPES.LOGGEDOUT, data: null })
+  },
+
+  isLoggedIn() {
+    return AppService.isLoggedIn()
+  },
+
+  getUser() {
+    return AppService.getUser()
+  },
+
   getActivities() {
     let promise = new Promise((resolve, reject) => {
       AppService.getActivities().then((res, err) => {

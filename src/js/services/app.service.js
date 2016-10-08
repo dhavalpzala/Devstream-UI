@@ -1,6 +1,8 @@
 import WebAPI from '../api/webapi'
 import ACTIVITY_TYPES from '../constants/activity_types'
 
+const USER = 'user'
+const AUTH_TOKEN = 'auth_token'
 const AppService = {
   login(accessToken) {
     var promise = new Promise((resolve, reject) => {
@@ -8,12 +10,31 @@ const AppService = {
         if (err) {
           reject(err)
         } else {
+          // storing auth_token for session handling
+          localStorage.setItem(AUTH_TOKEN, accessToken)
+          localStorage.setItem(USER, JSON.stringify(res.body))
           resolve(res.body)
         }
       })
     })
 
     return promise
+  },
+
+  isLoggedIn() {
+    return localStorage.getItem(AUTH_TOKEN) !== null
+  },
+
+  logout() {
+    localStorage.removeItem(AUTH_TOKEN)
+    localStorage.removeItem(USER)
+  },
+
+  getUser() {
+    if (this.isLoggedIn()) {
+      const user = localStorage.getItem(USER)
+      return user ? JSON.parse(user) : null
+    }
   },
 
   getActivities() {
