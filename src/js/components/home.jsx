@@ -2,6 +2,7 @@ import React from 'react'
 import appStoreInstance from '../stores/app.store'
 import ACTIVITY_TYPES from '../constants/activity_types'
 import GitCommitActivity from './activities/git_commit'
+import ActivityStream from './activity_stream'
 
 export default class Home extends React.Component {
   constructor () {
@@ -42,7 +43,7 @@ export default class Home extends React.Component {
     }
 
     return (<div>
-      <div className='activities'>{ activities }</div>
+      <ActivityStream />
       <div className='trending-projects'>
         <div className="trending-projects-title">Trending Projects</div>
         { projects }

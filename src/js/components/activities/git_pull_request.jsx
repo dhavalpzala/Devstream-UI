@@ -2,9 +2,9 @@ import React from 'react'
 import ActivityLogo from './activity_logo'
 import ACTIVITY_TYPES from '../../constants/activity_types'
 
-const GitCommitActivity = (props) => (
+const GitPullRequestActivity = (props) => (
   <div className="activity git-commit">
-    <ActivityLogo activityType= { ACTIVITY_TYPES.GIT_COMMIT } />
+    <ActivityLogo activityType= { ACTIVITY_TYPES.GIT_PULL_REQUEST } />
     <div className="activity-content">
       <div className="activity-header">{ props.data.header }</div> 
       <div className="activity-description">{ props.data.description }</div>
@@ -12,4 +12,4 @@ const GitCommitActivity = (props) => (
   </div>
 )
 
-export default GitCommitActivity
+export default GitPullRequestActivity
