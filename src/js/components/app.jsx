@@ -18,4 +18,4 @@ export default class App extends React.Component {
 }
 
 // to get activities
-AppAction.getActivities()
+AppAction.getActivities() 
