@@ -73,18 +73,19 @@ const AppService = {
   },
 
   getActivities() {
-    var promise = new Promise((resolve, reject) => {
+    return activities
+    /*var promise = new Promise((resolve, reject) => {
       resolve(activities)
-      // WebAPI.getActivities().then((res, err) => {
-      //   if (err) {
-      //     reject(err)
-      //   } else {
-      //     resolve(res.body)
-      //   }
-      // })
+      WebAPI.getActivities().then((res, err) => {
+        if (err) {
+          reject(err)
+        } else {
+          resolve(res.body)
+        }
+      })
     })
 
-    return promise
+    return promise */
   },
 
   updateUserProfile(provider, accessToken) {

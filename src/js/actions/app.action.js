@@ -36,7 +36,8 @@ const AppAction = {
   },
 
   getActivities() {
-    let promise = new Promise((resolve, reject) => {
+    return Promise.resolve()
+    /*let promise = new Promise((resolve, reject) => {
       AppService.getActivities().then((res, err) => {
         if (err) {
           reject(err)
@@ -46,8 +47,7 @@ const AppAction = {
         }
       })
     })
-
-    return promise
+    return promise */
   },
 
   updateUserProfile(provider, accessToken) {

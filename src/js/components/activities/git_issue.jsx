@@ -6,8 +6,8 @@ const GitIssueActivity = (props) => (
   <div className="activity git-commit">
     <ActivityLogo activityType= { ACTIVITY_TYPES.GIT_ISSUE } />
     <div className="activity-content">
-      <div className="activity-header">{ props.data.header }</div> 
-      <div className="activity-description">{ props.data.description }</div>
+      <div className="activity-header">{ props }</div> 
+      <div className="activity-description">{ props }</div>
     </div> 
   </div>
 )
