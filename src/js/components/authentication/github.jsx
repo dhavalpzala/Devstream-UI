@@ -2,9 +2,13 @@ import React from 'react'
 import { GITHUB } from '../../constants/social_auth'
 
 export default class Github extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+
   render () {
     return (
-      <button onClick={this.openWindow}>Github</button>
+      <button onClick={ this.openWindow.bind(this) }>{ this.props.name }</button>
     )
   }
 
@@ -14,9 +18,9 @@ export default class Github extends React.Component {
       state = GITHUB.STATE,
       scope = GITHUB.SCOPE
 
-    window.setGithubAccessToken = function (accessToken) {
+    window.setGithubAccessToken = (accessToken) => {
       if(accessToken) {
-        console.log(accessToken)
+        this.props.onAuthenticated(accessToken)
       }
     }
 

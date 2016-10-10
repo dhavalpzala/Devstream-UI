@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+import AppAction from './actions/app.action'
 import App from './components/app'
 import Home from './components/home'
 import Profile from './components/profile'
@@ -14,14 +15,22 @@ import '../styles/app.scss'
 // for supporting deep linking to browserHistory
 __webpack_public_path__ = "/"
 
+function requireAuth(nextState, replace) {
+  if (!AppAction.isLoggedIn()) {
+    replace({
+      pathname:'/'
+    })
+  }
+}
+
 ReactDOM.render((
-    <Router history={browserHistory}>
-        <Route path="/" component={App}>
-            <IndexRoute component={Home} />
-            <Route path="github-auth" component={GithubAuth}/>
-            <Route path="cas-auth" component={CasAuth}/>
-            <Route path="stackoverflow-auth" component={StackOverflowAuth}/>
-            <Route path="profile" component={Profile}/>
-        </Route>
-    </Router>
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home}/>
+      <Route path="github-auth" component={GithubAuth}/>
+      <Route path="cas-auth" component={CasAuth}/>
+      <Route path="stackoverflow-auth" component={StackOverflowAuth}/>
+      <Route path="profile" component={Profile} onEnter={requireAuth}/>
+    </Route>
+  </Router>
 ), document.getElementById('react-container'))
