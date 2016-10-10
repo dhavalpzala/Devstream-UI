@@ -6,8 +6,8 @@ const GitPullRequestActivity = (props) => (
   <div className="activity git-commit">
     <ActivityLogo activityType= { ACTIVITY_TYPES.GIT_PULL_REQUEST } />
     <div className="activity-content">
-      <div className="activity-header">{ props }</div> 
-      <div className="activity-description">{ props }</div>
+      <div className="activity-header">{ props.data.id }</div> 
+      <div className="activity-description">{ props.data.id }</div>
     </div> 
   </div>
 )
