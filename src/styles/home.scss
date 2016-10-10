@@ -66,7 +66,7 @@
   }
 }
 
-.trending-projects {
+.sidebar {
   display: inline-block;
   padding: 12px;
   width: 216px;
@@ -75,15 +75,25 @@
   position: fixed;
   background: #f9f5f0;
   border-left: 1px solid #efe8dc;
-  color: #7f3f6a;
+}
 
-  .trending-projects-title {
+.trending-projects,
+.trending-users {
+  color: #7f3f6a;
+  border-radius: 2px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  background: #fff;
+
+  .title {
     padding: 4px 12px;
     margin-bottom: 12px;
     border-bottom: 1px solid #efe8dc;
     font-weight: bold;
   }
-  .trending-project {
+  
+  .project,
+  .user {
     padding: 0 12px;
     cursor: pointer;
     margin-bottom: 5px;
