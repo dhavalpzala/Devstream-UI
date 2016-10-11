@@ -13,7 +13,7 @@ export default class TrendingUsers extends React.Component {
     return (
       <div className='trending-users'>
         <div className="title">Trending Users</div>
-        {this.state.users.map(user => (<div className='user'>{user}</div>))}
+        {this.state.users.map((user, i) => (<div className='user' key={i}>{user}</div>))}
       </div>
     )
   }

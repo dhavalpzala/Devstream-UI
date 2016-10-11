@@ -7,9 +7,19 @@ const GitPullRequestActivity = (props) => (
     <ActivityLogo activityType= { ACTIVITY_TYPES.GIT_PULL_REQUEST } />
     <div className="activity-content">
       <div className="activity-header">
-        <span className="username">{props.user.firstName} {props.user.lastName}</span> created a pull request at <span className="project">{props.data.repo.name}</span>
+        <span className="username">{props.user.firstName} {props.user.lastName}</span> created pull request <span className="pr-number">#{props.data.payload.number}</span> at <span className="project">{props.data.repo.name}</span>
       </div> 
-      <div className="activity-description">{ props.data.id }</div>
+      <div className="activity-description">
+        <div className="pr-info">
+          <div>
+            <div className="action">{props.data.payload.action}</div>
+            <div className="title">{props.data.payload.title}</div>
+          </div>
+          <div className="stats">
+            with {props.data.payload.stats.commits} commits, {props.data.payload.stats.additions} additions and {props.data.payload.stats.deletions} deletions
+          </div>
+        </div>
+      </div>
     </div> 
   </div>
 )

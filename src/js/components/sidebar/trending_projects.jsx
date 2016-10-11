@@ -13,7 +13,7 @@ export default class TrendingProjects extends React.Component {
     return (
       <div className='trending-projects'>
         <div className="title">Trending Projects</div>
-        {this.state.projects.map(project => (<div className='project'>{project}</div>))}
+        {this.state.projects.map((project, i) => (<div className='project' key={i}>{project}</div>))}
       </div>
     )
   }

@@ -20,6 +20,7 @@ export default class ActivityStream extends React.Component {
     const activities = []
     if (this.state.activities) {
       this.state.activities.forEach((activity, idx) => {
+        console.log(activity)
         switch (activity.type) {
           case ACTIVITY_TYPES.GIT_COMMIT:
             activities.push(<GitCommitActivity key={activity.event.id} data={activity.event} user={activity.userPayload} />)
