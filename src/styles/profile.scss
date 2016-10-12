@@ -1,0 +1,27 @@
+.profile {
+  padding: 10px 20px;
+  .profile-image {
+    height: 70px;
+    width: 70px;
+    border: 1px solid lightgray;
+    display: inline-block;
+  }
+  .profile-name {
+    display: inline-block;
+    font-size: 30px;
+    vertical-align: top;
+    line-height: 70px;
+    margin-left: 15px;
+  }
+  .profile-social {
+    & > * {
+      display: inline-block;
+    }
+
+    .profile-social-title {
+      width: 150px;
+      font-size: 16px;
+      text-transform: capitalize;
+    }
+  }
+}

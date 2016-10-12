@@ -31,6 +31,10 @@ const AppAction = {
     return AppService.getUser()
   },
 
+  getProfiles() {
+    return AppService.getProfiles()
+  },
+
   getActivities() {
     let promise = new Promise((resolve, reject) => {
       AppService.getActivities().then((res, err) => {
@@ -42,8 +46,16 @@ const AppAction = {
         }
       })
     })
-    
+
     return promise
+  },
+
+  updateUserProfile(provider, accessToken) {
+    return AppService.updateUserProfile(provider, accessToken)
+  },
+
+  deleteUserProfile(provider) {
+    return AppService.updateUserProfile(provider, accessToken)
   }
 }
 

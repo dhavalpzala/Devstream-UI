@@ -30,6 +30,40 @@ const WebAPI = {
     })
 
     return promise
+  },
+
+  updateUserProfile(userId, data) {
+    var promise = new Promise((resolve, reject) => {
+    request.put(`${APIUrl}/user/${userId}`)
+      .set('Content-Type', 'application/json')
+      .send(data)
+      .end(function(err, res){
+        if (err) {
+          reject(err)
+        } else {
+          resolve(res)
+        }
+      })
+    })
+
+    return promise
+  },
+
+  deleteUserProfile(data) {
+    var promise = new Promise((resolve, reject) => {
+    request.delete(`${APIUrl}/user/${userId}`)
+      .set('Content-Type', 'application/json')
+      .send(data)
+      .end(function(err, res){
+        if (err) {
+          reject(err)
+        } else {
+          resolve(res)
+        }
+      })
+    })
+
+    return promise
   }
 }
 

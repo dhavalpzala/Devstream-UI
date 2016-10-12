@@ -2,9 +2,13 @@ import React from 'react'
 import { STACKOVERFLOW } from '../../constants/social_auth'
 
 export default class StackOverflow extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+
   render () {
     return (
-      <button onClick={this.openWindow}>Stack Overflow</button>
+      <button onClick={ this.openWindow.bind(this) }>{ this.props.name }</button>
     )
   }
 
@@ -14,9 +18,9 @@ export default class StackOverflow extends React.Component {
       state = STACKOVERFLOW.STATE,
       scope = STACKOVERFLOW.SCOPE
 
-    window.setStackAccessToken = function (accessToken) {
+    window.setStackAccessToken = (accessToken) => {
       if(accessToken) {
-        console.log(accessToken);
+        this.props.onAuthenticated(accessToken)
       }
     }
 
