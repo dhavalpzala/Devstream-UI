@@ -2,6 +2,8 @@ import React from 'react'
 import appStoreInstance from '../stores/app.store'
 import ACTIVITY_TYPES from '../constants/activity_types'
 import GitCommitActivity from './activities/git_commit'
+import ActivityStream from './activity_stream'
+import TrendingSidebar from './sidebar/sidebar'
 
 export default class Home extends React.Component {
   constructor () {
@@ -23,7 +25,7 @@ export default class Home extends React.Component {
 
   render () {
     let activities = [],
-      projects = [] 
+        projects = [] 
 
     if (this.state.activities) {
       this.state.activities.forEach((activity) => {
@@ -41,12 +43,11 @@ export default class Home extends React.Component {
       })
     }
 
-    return (<div>
-      <div className='activities'>{ activities }</div>
-      <div className='trending-projects'>
-        <div className="trending-projects-title">Trending Projects</div>
-        { projects }
+    return (
+      <div>
+        <ActivityStream />
+        <TrendingSidebar projects={true} users={true} topics={true} />
       </div>
-    </div>)
+    )
   } 
 }

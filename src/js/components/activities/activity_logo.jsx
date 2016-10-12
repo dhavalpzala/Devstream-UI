@@ -10,6 +10,8 @@ export default class ActivityLogo extends React.Component {
     let logoClassNames = ''
     switch (this.props.activityType) {
         case ACTIVITY_TYPES.GIT_COMMIT:
+        case ACTIVITY_TYPES.GIT_ISSUE:
+        case ACTIVITY_TYPES.GIT_PULL_REQUEST:
             logoClassNames = 'fa fa-github'
             break;
     

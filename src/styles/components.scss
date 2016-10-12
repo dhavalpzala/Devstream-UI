@@ -1,0 +1,55 @@
+.activity {
+  .username,
+  .project,
+  .branch-name,
+  .issue-number,
+  .pr-number {
+    color: #4c263f;
+    font-weight: bold;
+  }
+
+  .activity-content {
+    padding: 8px;
+  }
+
+  .activity-description {
+    background: #fff;
+    color: #666;
+
+    .commit-info {
+      margin-bottom: 4px;
+      
+      .sha,
+      .author,
+      .message {
+        display: inline-block;
+        width: 15%;
+      }
+
+      .message {
+        width: 70%;
+      }
+    }
+
+    .pr-info {
+      .action {
+        display: inline-block;
+        width: 15%;
+        text-transform: uppercase;
+      }
+
+      .title {
+        display: inline-block;
+        width: 85%;
+      }
+
+      .stats {
+        color: #999;
+      }
+
+      & > div {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
