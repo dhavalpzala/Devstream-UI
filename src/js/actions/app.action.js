@@ -51,11 +51,22 @@ const AppAction = {
   },
 
   updateUserProfile(provider, accessToken) {
-    return AppService.updateUserProfile(provider, accessToken)
+    let promise = new Promise((resolve, reject) => {
+      AppService.updateUserProfile(provider, accessToken).then((res, err) => {
+        if (err) {
+          reject(err)
+        } else {
+          AppDispatcher.dispatch({ type: ACTION_TYPES.UPDATE_PROFILE, data: res })          
+          resolve(res)
+        }
+      })
+    })
+    
+    return promise
   },
 
   deleteUserProfile(provider) {
-    return AppService.updateUserProfile(provider, accessToken)
+    return AppService.deleteUserProfile(provider, accessToken)
   }
 }
 

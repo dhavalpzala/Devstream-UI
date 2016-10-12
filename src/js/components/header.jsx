@@ -1,4 +1,5 @@
 import React from 'react'
+import { browserHistory } from 'react-router'
 import Cas from './authentication/cas'
 import Logo from './logo'
 import { Link } from 'react-router'
@@ -11,8 +12,8 @@ export default class Header extends React.Component {
 
     this.state = {
       isLoggedIn: appStoreInstance.isLoggedIn,
-      firstName: undefined,
-      lastName: undefined,
+      firstName: appStoreInstance.user ? appStoreInstance.user.firstName : '',
+      lastName: appStoreInstance.user ? appStoreInstance.user.lastName : '',
       showMenu: false
     }
   }
@@ -35,6 +36,8 @@ export default class Header extends React.Component {
 
   logout() {
     AppAction.logout()
+    // redirect to home page
+    browserHistory.replace('/')
   }
 
   render() {
