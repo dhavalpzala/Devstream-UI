@@ -14,6 +14,12 @@ export default class ActivityLogo extends React.Component {
         case ACTIVITY_TYPES.GIT_PULL_REQUEST:
             logoClassNames = 'fa fa-github'
             break;
+
+        case ACTIVITY_TYPES.SO_QUESTION:
+        case ACTIVITY_TYPES.SO_ANSWER:
+        case ACTIVITY_TYPES.SO_COMMENT:
+          logoClassNames = 'fa fa-stack-overflow'
+          break;
     
         default:
             break;

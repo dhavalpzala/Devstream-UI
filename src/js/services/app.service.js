@@ -80,11 +80,9 @@ const AppService = {
     return null
   },
 
-  getActivities() {
-    return activities
-    /*var promise = new Promise((resolve, reject) => {
-      resolve(activities)
-      WebAPI.getActivities().then((res, err) => {
+  getActivities({before, after}) {
+    var promise = new Promise((resolve, reject) => {
+      WebAPI.getActivities({before, after}).then((res, err) => {
         if (err) {
           reject(err)
         } else {
@@ -93,7 +91,7 @@ const AppService = {
       })
     })
 
-    return promise */
+    return promise
   },
 
   updateUserProfile(provider, accessToken) {
