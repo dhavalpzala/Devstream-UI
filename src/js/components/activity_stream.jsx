@@ -76,7 +76,7 @@ export default class ActivityStream extends React.Component {
     return (
       <div className="activities">
         {activities}
-        <div className="loadMore" onClick={this.loadMoreActivities.bind(this)}>Load More</div>
+        <div className="load-more" onClick={this.loadMoreActivities.bind(this)}>More</div>
       </div>
     )
   }
