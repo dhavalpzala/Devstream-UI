@@ -47,21 +47,29 @@ const AppService = {
       
       if (user && user.profiles) {
         const profiles = user.profiles.map((profile) => {
-          let userName = ''
+          let userName = '',
+            url = ''
+
           switch (profile.providerName) {
             case PROVIDERS.GITHUB:
-              userName = profile.payLoad.login.value
+              userName = profile.payload.login
+              url = profile.payload.html_url
               break
             case PROVIDERS.STACKOVERFLOW:
-              if(profile.payLoad.items.length > 0) {
-                userName = profile.payLoad.items[0].user_id
+              if(profile.payload.items.length > 0) {
+                let link = profile.payload.items[0].link,
+                  array = link.split('/')
+ 
+                userName = array[array.length - 1]
+                url = link
               }
               break
           }
 
           return {
             provider: profile.providerName,
-            userName: userName
+            userName,
+            url
           }
         })
 
@@ -100,7 +108,8 @@ const AppService = {
               {
                 providerName: provider,
                 authToken: accessToken,
-                payLoad: {}
+                lastSeen: '0',
+                payload: {}
               }
             ]
           }

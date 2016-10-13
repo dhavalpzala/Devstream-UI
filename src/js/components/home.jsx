@@ -25,7 +25,7 @@ export default class Home extends React.Component {
 
   render () {
     let activities = [],
-        projects = [] 
+        projects = []
 
     if (this.state.activities) {
       this.state.activities.forEach((activity) => {

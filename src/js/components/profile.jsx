@@ -9,22 +9,17 @@ export default class Profile extends React.Component {
   constructor () {
     super()
 
-    const { user: { firstName = '', lastName = '' }} = appStoreInstance
+    const { user: { firstName = '', lastName = '' }, profiles } = appStoreInstance
     
-    this.state = { firstName, lastName, profiles: this.getProfiles() }
+    this.state = { firstName, lastName, profiles }
   }
 
-  getProfiles() {
-    const userProfiles = AppAction.getProfiles(),
-      profiles = {}
-
-    if (userProfiles) {
-      userProfiles.forEach((profile) => {
-        profiles[profile.provider] = profile.userName
+  componentDidMount () {
+    appStoreInstance.addProfileChangeListener(() => {
+      this.setState({
+        profiles: appStoreInstance.profiles
       })
-    }
-
-    return profiles
+    })
   }
   
   render() {
@@ -34,13 +29,14 @@ export default class Profile extends React.Component {
       if (PROVIDERS.hasOwnProperty(provider)) {
         let providerName = PROVIDERS[provider]
 
-        profiles.push(<div className="profile-social">
+        profiles.push(<div key={ `profile-${providerName}`} className="profile-social">
           <div className="profile-social-title"> { providerName }</div>
           <div className="profile-social-content">
             {(() => {
-              let userName = this.state.profiles[providerName]  
-              if (userName) {
-                return(<div className="profile-social-username"> { userName }</div>)
+              if (this.state.profiles[providerName]) {
+                let userName = this.state.profiles[providerName].userName,
+                  url = this.state.profiles[providerName].url 
+                return(<div className="profile-social-username"><a target="blank" href={ url }>{ userName }</a></div>)
               } else {
                 switch (providerName) {
                   case PROVIDERS.GITHUB:
@@ -77,11 +73,7 @@ export default class Profile extends React.Component {
   }
 
   link(provider, accessToken) {
-    AppAction.updateUserProfile(provider, accessToken).then((res,  err) => {
-      this.setState({
-        profiles: this.getProfiles()
-      })
-    })
+    AppAction.updateUserProfile(provider, accessToken)
   }
 
   unlink(provider) {

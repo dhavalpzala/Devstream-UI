@@ -5,6 +5,8 @@ import AppAction from './actions/app.action'
 import App from './components/app'
 import Home from './components/home'
 import Profile from './components/profile'
+import User from './components/user'
+import NotFound from './components/not_found'
 import GithubAuth from './components/authentication/github_auth'
 import CasAuth from './components/authentication/cas_auth'
 import StackOverflowAuth from './components/authentication/stackoverflow_auth'
@@ -31,6 +33,8 @@ ReactDOM.render((
       <Route path="cas-auth" component={CasAuth}/>
       <Route path="stackoverflow-auth" component={StackOverflowAuth}/>
       <Route path="profile" component={Profile} onEnter={requireAuth}/>
+      <Route path="user/:id" component={User}/>
+      <Route path="*" component={NotFound} />
     </Route>
   </Router>
 ), document.getElementById('react-container'))
