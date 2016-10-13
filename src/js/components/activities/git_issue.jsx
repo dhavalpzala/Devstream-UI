@@ -8,7 +8,7 @@ const GitIssueActivity = (props) => (
     <ActivityLogo activityType= { ACTIVITY_TYPES.GIT_ISSUE } />
     <div className="activity-content">
       <div className="activity-header">
-        <span className="username">{props.user.firstName} {props.user.lastName}</span> created issue <span className="issue-number">#{props.data.payload.number}</span> at <span className="project">{props.data.repo.name}</span>
+        <span className="username"><img className="avatar" src={props.user.imageURL} />{props.user.firstName} {props.user.lastName}</span> created issue <span className="issue-number">#{props.data.payload.number}</span> at <span className="project">{props.data.repo.name}</span>
         <span className="time">{moment(props.time, 'X').fromNow()}</span>
       </div>
       <div className="activity-description">

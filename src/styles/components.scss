@@ -4,8 +4,22 @@
   .branch-name,
   .issue-number,
   .pr-number {
-    color: #4c263f;
+    color: #1f6d31;
     font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .username {
+    .avatar {
+      height: 20px;
+      vertical-align: bottom;
+      margin-right: 4px;
+      border-radius: 50%;
+    }
   }
 
   .activity-header {
@@ -19,6 +33,8 @@
   }
 
   .activity-content {
+    border: 1px solid #e5e5e5;
+
     & > .activity-header,
     & > .activity-description {
       padding: 8px;
@@ -26,7 +42,7 @@
   }
 
   .activity-description {
-    background: #fff;
+    background: #fafafa;
     color: #666;
 
     .commit-info {

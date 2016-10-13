@@ -19,7 +19,8 @@ const GitCommitActivity = (props) => {
       <ActivityLogo activityType= { ACTIVITY_TYPES.GIT_COMMIT } />
       <div className="activity-content">
         <div className="cf activity-header">
-          <span className="username">{props.user.firstName} {props.user.lastName}</span> pushed {props.data.payload.commits.length} commits to <span className="branch-name">{ref}</span> at <span className="project">{props.data.repo.name}</span>
+          <span className="username">
+            <img className="avatar" src={props.user.imageURL} />{props.user.firstName} {props.user.lastName}</span> pushed {props.data.payload.commits.length} commits to <span className="branch-name">{ref}</span> at <span className="project">{props.data.repo.name}</span>
           <span className="time">{moment(props.time, 'X').fromNow()}</span>
         </div> 
         <div className="activity-description">
