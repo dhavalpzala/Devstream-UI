@@ -47,7 +47,7 @@ export default class Header extends React.Component {
           <div className="header-title">
             <Link to="/">
               <Logo />
-              <span>DevStream</span>
+              <span><span className="dev">dev</span><span className="stream">stream</span></span>
             </Link>
           </div>
           <div className="header-links cf">

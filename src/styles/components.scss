@@ -8,8 +8,21 @@
     font-weight: bold;
   }
 
+  .activity-header {
+    //background: #f5f5f5;
+    
+    .time {
+      float: right;
+      padding-right: 2px;
+      color: #888;
+    }
+  }
+
   .activity-content {
-    padding: 8px;
+    & > .activity-header,
+    & > .activity-description {
+      padding: 8px;
+    }
   }
 
   .activity-description {
@@ -51,5 +64,9 @@
         margin-bottom: 8px;
       }
     }
+  }
+
+  &:nth-last-child(2) .activity-logo-vline {
+    display: none;
   }
 }

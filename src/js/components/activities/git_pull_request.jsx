@@ -1,6 +1,7 @@
 import React from 'react'
 import ActivityLogo from './activity_logo'
 import ACTIVITY_TYPES from '../../constants/activity_types'
+import moment from 'moment'
 
 const GitPullRequestActivity = (props) => (
   <div className="activity git-commit">
@@ -8,6 +9,7 @@ const GitPullRequestActivity = (props) => (
     <div className="activity-content">
       <div className="activity-header">
         <span className="username">{props.user.firstName} {props.user.lastName}</span> created pull request <span className="pr-number">#{props.data.payload.number}</span> at <span className="project">{props.data.repo.name}</span>
+        <span className="time">{moment(props.time, 'X').fromNow()}</span>
       </div> 
       <div className="activity-description">
         <div className="pr-info">

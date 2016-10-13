@@ -18,22 +18,22 @@ body {
   color: #4c4c4c;
   line-height: 1.428571429;
   font-size: 14px;
+  background: #EDF3FC;
 }
 
 header {
-  background: #f9f5f0;
-  color: #f39020;
+  background: #2E3B4F;
+  color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid #f39020;
+  border-bottom: 1px solid #4AD76B;
   z-index: 100;
   padding: 5px 0;
 
   .header-title {
-    font-weight: bold;
-    font-family: 'whois', 'Source Sans Pro',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Viga', 'Source Sans Pro',"Helvetica Neue",Helvetica,Arial,sans-serif;
     display: inline-block;
     font-size: 1.6em;
     padding: 1px 12px;
@@ -48,6 +48,16 @@ header {
       height: 31px;
       vertical-align: top;
       display: inline-block;
+    }
+
+    span.stream {
+      letter-spacing: 0.2px;
+      color: #4AD76B;
+    }
+
+    span.dev {
+      color: #aaa;
+      letter-spacing: 0.2px;
     }
   }
 
@@ -113,7 +123,7 @@ a {
 }
 
 .fa {
-  color: #f39020;
+  color: #4AD76B;
 }
 
 .cf:after {
