@@ -17,16 +17,19 @@ const WebAPI = {
     return promise
   },
 
-  getActivities() {
+  getActivities({ before, after }) {
+    let suffix = before ? `?before=${before}`: ''
+    suffix = after ? `?after=${after}`: suffix
+
     var promise = new Promise((resolve, reject) => {
-    request.get(APIUrl + '/events')
-      .end(function(err, res){
-        if (err) {
-          reject(err)
-        } else {
-          resolve(res)
-        }
-      })
+      request.get(APIUrl + `/events${suffix}`)
+        .end(function(err, res){
+          if (err) {
+            reject(err)
+          } else {
+            resolve(res)
+          }
+        })
     })
 
     return promise
