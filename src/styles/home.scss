@@ -15,7 +15,11 @@
       overflow: hidden;
       line-height: 36px;
       text-align: center;
-      font-size: 32px;
+      font-size: 34px;
+
+      .fa {
+        color: #2e3b4f;
+      }
       
       .activity-logo-image {
         height: 36px;
@@ -24,44 +28,32 @@
         border-radius: 50%;
         position: relative;
         z-index: 10;
-        background: #f9f5f0;
+        background: #fff;
       }
       .activity-logo-vline {
         position: absolute;
-        left: 25px;
-        top: 0;
+        left: 28px;
+        top: 12px;
         height: 100%;
-        width: 6px;
-        background: #f9f5f0;
+        width: 1px;
+        background: #ddd;
       }
       .activity-logo-hline {
         position: absolute;
         left: 30px;
-        top: 15px;
-        height: 8px;
+        top: 20px;
+        height: 1px;
         width: 100%;
-        background: #f9f5f0;
+        background: #ddd;
       }
     }
     .activity-content {
-      background: white;
       border-radius: 2px;
       margin-left: 60px;
-      background: #f9f5f0;
-
-      .activity-description {
-        padding: 10px;
-        margin-top: 10px;
-      }
+      background: #fff;
 
       .activity-header {
-        color: #7f3f6a;
-        cursor: pointer;
-        padding-left: 4px;
-
-        &:hover {
-          color: #4c263f;
-        }
+        color: #2e3b4f;
       }
     }
   }
@@ -70,11 +62,15 @@
 .load-more {
   width: 100px;
   padding: 5px 0;
-  background: #f39020;
+  background: #4AD76B;
   text-align: center;
   color: white;
   margin: 0 auto 15px auto;
   cursor: pointer;
+
+  &:hover {
+    background: #1f6d31;
+  }
 }
 
 .sidebar {
@@ -91,17 +87,18 @@
 .trending-projects,
 .trending-users,
 .trending-topics {
-  color: #7f3f6a;
+  color: #2e3b4f;
   border-radius: 2px;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  //background: #fff;
-  background: #f9f5f0;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
 
   .title {
     padding: 8px 12px;
     margin-bottom: 4px;
-    color: #4c263f;
+    color: #1f6d31;
+    background: #fff;
     font-weight: bold;
   }
   
@@ -113,8 +110,7 @@
     margin-bottom: 5px;
 
     &:hover {
-      color: #f39020;
-      background: #fff;
+      text-decoration: underline;
     }
   }
 }

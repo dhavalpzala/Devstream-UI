@@ -37,7 +37,7 @@ module.exports = {
         }
       },
       "/devstream-api": {
-        target: "http://172.16.55.187:9000",
+        target: "http://192.168.2.67:9001",
         changeOrigin: true,
         pathRewrite: {
           "^/devstream-api": ""

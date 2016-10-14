@@ -58,13 +58,13 @@ export default class ActivityStream extends React.Component {
       this.state.activities.forEach((activity, idx) => {
         switch (activity.type) {
           case ACTIVITY_TYPES.GIT_COMMIT:
-            activities.push(<GitCommitActivity key={idx} data={activity.event} user={activity.user} />)
+            activities.push(<GitCommitActivity key={idx} time={activity.createdAt} data={activity.event} user={activity.user} />)
             break
           case ACTIVITY_TYPES.GIT_ISSUE:
-            activities.push(<GitIssueActivity key={idx} data={activity.event} user={activity.user} />)
+            activities.push(<GitIssueActivity key={idx} time={activity.createdAt} data={activity.event} user={activity.user} />)
             break
           case ACTIVITY_TYPES.GIT_PULL_REQUEST:
-            activities.push(<GitPullRequestActivity key={idx} data={activity.event} user={activity.user} />)
+            activities.push(<GitPullRequestActivity key={idx} time={activity.createdAt} data={activity.event} user={activity.user} />)
             break
           default:
             console.log(activity)
