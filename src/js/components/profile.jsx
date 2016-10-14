@@ -9,9 +9,9 @@ export default class Profile extends React.Component {
   constructor () {
     super()
 
-    const { user: { firstName = '', lastName = '' }, profiles } = appStoreInstance
+    const { user: { firstName = '', lastName = '' }, profiles, profileImageUrl } = appStoreInstance
     
-    this.state = { firstName, lastName, profiles }
+    this.state = { firstName, lastName, profiles, profileImageUrl }
   }
 
   componentDidMount () {
@@ -54,7 +54,15 @@ export default class Profile extends React.Component {
     return (
       <div className="profile">
         <div>
-          <div className="profile-image"></div>
+          <div className="profile-image">
+            {(() => {
+              if (this.state.profileImageUrl) {
+                return (<img src={ this.state.profileImageUrl }/>)
+              } else {
+                return (<i className="fa fa-user" aria-hidden="true"></i>)
+              }
+            })()}
+          </div>
           <div className="profile-name">{ this.state.firstName + ' ' + this.state.lastName }</div>
         </div>
         <div>

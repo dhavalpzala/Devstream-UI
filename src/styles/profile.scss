@@ -1,10 +1,25 @@
 .profile {
   padding: 10px 20px;
+  background: $primary-background;
+  color: $alternate-color;
+  min-height: 400px;
+  border-radius: 5px;
+
   .profile-image {
     height: 70px;
     width: 70px;
     border: 1px solid lightgray;
     display: inline-block;
+
+    /* for default image */
+    font-size: 65px;
+    line-height: 70px;
+    text-align: center;
+    
+    img {
+      height: 100%;
+      width: 100%;
+    }
   }
   .profile-name {
     display: inline-block;

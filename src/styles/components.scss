@@ -4,7 +4,7 @@
   .branch-name,
   .issue-number,
   .pr-number {
-    color: #1f6d31;
+    color: $primary-color;
     font-weight: bold;
     cursor: pointer;
 
@@ -24,7 +24,7 @@
 
   .activity-header {
     //background: #f5f5f5;
-    
+
     .time {
       float: right;
       padding-right: 2px;
@@ -42,12 +42,12 @@
   }
 
   .activity-description {
-    background: #fafafa;
+    background: $alternate-background;
     color: #666;
 
     .commit-info {
       margin-bottom: 4px;
-      
+
       .sha,
       .author,
       .message {

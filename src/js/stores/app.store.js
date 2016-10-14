@@ -2,6 +2,7 @@ import AppDispatcher from '../dispatchers/app.dispatcher'
 import AppAction from '../actions/app.action'
 import EventEmitter from 'events'
 import ACTION_TYPES from '../constants/action_types'
+import PROVIDERS from '../constants/providers'
 
 const CHANGE_EVENT = 'change'
 const PROFILE_CHANGE_EVENT = 'profile_change'
@@ -28,7 +29,8 @@ export class AppStore extends EventEmitter {
     afterLoggedOut() {
       this.user = null
       this.profiles = null
-      
+      this.profileImageUrl = null
+
       this.isLoggedIn = false
     }
 
@@ -40,11 +42,15 @@ export class AppStore extends EventEmitter {
         userProfiles.forEach((profile) => {
           profiles[profile.provider] =  {
             userName: profile.userName,
-            url: profile.url
+            url: profile.url,
+            imageUrl: profile.imageUrl
           }
         })
       }
       
+      // set profile image url
+      this.profileImageUrl = (profiles[PROVIDERS.GITHUB] && profiles[PROVIDERS.GITHUB].imageUrl ) || ( profiles[PROVIDERS.STACKOVERFLOW] && profiles[PROVIDERS.STACKOVERFLOW].imageUrl)
+
       return profiles
     }
     
