@@ -14,6 +14,7 @@ export default class Header extends React.Component {
       isLoggedIn: appStoreInstance.isLoggedIn,
       firstName: appStoreInstance.user ? appStoreInstance.user.firstName : '',
       lastName: appStoreInstance.user ? appStoreInstance.user.lastName : '',
+      profileImageUrl: appStoreInstance.profileImageUrl,
       showMenu: false
     }
   }
@@ -24,6 +25,7 @@ export default class Header extends React.Component {
         isLoggedIn: appStoreInstance.isLoggedIn,
         firstName: appStoreInstance.user ? appStoreInstance.user.firstName : '',
         lastName: appStoreInstance.user ? appStoreInstance.user.lastName : '',
+        profileImageUrl: appStoreInstance.profileImageUrl,
         showMenu: false
       })
     })
@@ -54,7 +56,15 @@ export default class Header extends React.Component {
             {(() => {
               if (this.state.isLoggedIn) {
                 return (<div className="header-user" onClick= { this.toggleMenu.bind(this) }>
-                  <div className="header-user-img"><i className="fa fa-user" aria-hidden="true"></i></div>
+                  <div className="header-user-img">
+                    {(() => {
+                      if (this.state.profileImageUrl) {
+                        return (<img src={ this.state.profileImageUrl }/>)
+                      } else {
+                        return (<i className="fa fa-user" aria-hidden="true"></i>)
+                      }
+                    })()}
+                  </div>
                   <div className="header-user-name"> { this.state.firstName + ' ' + this.state.lastName } </div> 
                   <div className={ this.state.showMenu ? 'header-user-links' : 'hidden'}>
                     <div className="header-user-link"><Link to="profile">Profile</Link></div>

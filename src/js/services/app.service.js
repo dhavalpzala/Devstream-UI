@@ -44,24 +44,27 @@ const AppService = {
   getProfiles() {
     if (this.isLoggedIn()) {
       const user = this.getUser()
-      
+
       if (user && user.profiles) {
         const profiles = user.profiles.map((profile) => {
           let userName = '',
-            url = ''
+            url = '',
+            imageUrl = ''
 
           switch (profile.providerName) {
             case PROVIDERS.GITHUB:
               userName = profile.payload.login
               url = profile.payload.html_url
+              imageUrl = profile.payload.avatar_url
               break
             case PROVIDERS.STACKOVERFLOW:
               if(profile.payload.items.length > 0) {
                 let link = profile.payload.items[0].link,
                   array = link.split('/')
- 
+
                 userName = array[array.length - 1]
                 url = link
+                imageUrl = profile.payload.items[0].profile_image
               }
               break
           }
@@ -69,11 +72,12 @@ const AppService = {
           return {
             provider: profile.providerName,
             userName,
-            url
+            url,
+            imageUrl
           }
         })
 
-        return profiles        
+        return profiles
       }
     }
 
@@ -118,7 +122,7 @@ const AppService = {
           } else {
             localStorage.setItem(USER, JSON.stringify(res.body))
             resolve(res.body)
-          }  
+          }
         })
       } else {
         reject(new Error("User is not loggedin"))

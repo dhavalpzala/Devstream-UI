@@ -1,3 +1,11 @@
+/* theme variables */
+$primary-color: #1f6d31;
+$alternate-color: #2E3B4F;
+$other-color: #4AD76B;
+$body-background: #2e3033;
+$primary-background: #fff;
+$alternate-background: #fafafa;
+
 * {
   box-sizing: border-box;
 
@@ -18,17 +26,17 @@ body {
   color: #4c4c4c;
   line-height: 1.428571429;
   font-size: 14px;
-  background: #EDF3FC;
+  background: $body-background;
 }
 
 header {
-  background: #2E3B4F;
-  color: #fff;
+  background: $alternate-color;
+  color: $primary-background;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid #4AD76B;
+  border-bottom: 2px solid $other-color;
   z-index: 100;
   padding: 5px 0;
 
@@ -52,7 +60,7 @@ header {
 
     span.stream {
       letter-spacing: 0.2px;
-      color: #4AD76B;
+      color: $other-color;
     }
 
     span.dev {
@@ -86,6 +94,11 @@ header {
       text-align: center;
       font-size: 25px;
       line-height: 30px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
     }
 
     .header-user-name {
@@ -97,13 +110,14 @@ header {
     .header-user-links {
       position: absolute;
       width: 100%;
-      background: antiquewhite;
-      border: 1px solid burlywood;
+      background: $alternate-background;
+      border: 1px solid #e5e5e5;
       margin-top: 5px;
 
       .header-user-link {
         padding: 5px 10px;
-        border-bottom: 1px solid burlywood;
+        color: $alternate-color;
+        border-bottom: 1px solid #e5e5e5;
       }
 
       .header-user-link:last-child {
@@ -123,7 +137,7 @@ a {
 }
 
 .fa {
-  color: #4AD76B;
+  color: $other-color;
 }
 
 .cf:after {
@@ -134,6 +148,7 @@ a {
 
 .routerView {
   margin-top: 45px !important;
+  padding-top: 15px;
 }
 
 .routerView,
