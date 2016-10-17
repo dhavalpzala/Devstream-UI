@@ -2,7 +2,7 @@
 $primary-color: #1f6d31;
 $alternate-color: #2E3B4F;
 $other-color: #4AD76B;
-$body-background: #2e3033;
+$body-background: #eff5ff;
 $primary-background: #fff;
 $alternate-background: #fafafa;
 
@@ -98,6 +98,7 @@ header {
       img {
         height: 100%;
         width: 100%;
+        border-radius: 50%;
       }
     }
 

@@ -10,6 +10,7 @@ import NotFound from './components/not_found'
 import GithubAuth from './components/authentication/github_auth'
 import CasAuth from './components/authentication/cas_auth'
 import StackOverflowAuth from './components/authentication/stackoverflow_auth'
+import Artist from './components/easter_eggs/artist'
 
 // import styles
 import '../styles/app.scss'
@@ -34,6 +35,7 @@ ReactDOM.render((
       <Route path="stackoverflow-auth" component={StackOverflowAuth}/>
       <Route path="profile" component={Profile} onEnter={requireAuth}/>
       <Route path="user/:id" component={User}/>
+      <Route path="artist" component={Artist}/>
       <Route path="*" component={NotFound} />
     </Route>
   </Router>

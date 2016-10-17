@@ -5,6 +5,9 @@ import ACTIVITY_TYPES from '../constants/activity_types'
 import GitCommitActivity from './activities/git_commit'
 import GitIssueActivity from './activities/git_issue'
 import GitPullRequestActivity from './activities/git_pull_request'
+import SOCommentActivity from './activities/so_comment'
+import SOQuestionActivity from './activities/so_question'
+import SOAnswerActivity from './activities/so_answer'
 
 export default class ActivityStream extends React.Component {
   constructor(props) {
@@ -65,6 +68,15 @@ export default class ActivityStream extends React.Component {
             break
           case ACTIVITY_TYPES.GIT_PULL_REQUEST:
             activities.push(<GitPullRequestActivity key={idx} time={activity.createdAt} data={activity.event} user={activity.user} />)
+            break
+          case ACTIVITY_TYPES.SO_COMMENT:
+            activities.push(<SOCommentActivity key={idx} time={activity.createdAt} data={activity.event} user={activity.user} />)
+            break
+          case ACTIVITY_TYPES.SO_ANSWER:
+            activities.push(<SOAnswerActivity key={idx} time={activity.createdAt} data={activity.event} user={activity.user} />)
+            break
+          case ACTIVITY_TYPES.SO_QUESTION:
+            activities.push(<SOQuestionActivity key={idx} time={activity.createdAt} data={activity.event} user={activity.user} />)
             break
           default:
             console.log(activity)
