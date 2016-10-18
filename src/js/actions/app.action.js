@@ -1,6 +1,7 @@
 import AppDispatcher from '../dispatchers/app.dispatcher'
 import AppService from '../services/app.service'
 import ACTION_TYPES from '../constants/action_types'
+import TRENDS_TYPE from '../constants/trends_type'
 
 const AppAction = {
   login(accessToken) {
@@ -67,6 +68,34 @@ const AppAction = {
 
   deleteUserProfile(provider) {
     return AppService.deleteUserProfile(provider, accessToken)
+  },
+
+  getTrends(type) {
+    let promise = new Promise((resolve, reject) => {
+      AppService.getTrends(type).then((res, err) => {
+        if (err) {
+          reject(err)
+        } else {
+          switch (type) {
+            case TRENDS_TYPE.PROJECTS:
+              AppDispatcher.dispatch({ type: ACTION_TYPES.GET_TRENDING_PROJECTS, data: res })    
+              break;
+
+            case TRENDS_TYPE.USERS:
+              AppDispatcher.dispatch({ type: ACTION_TYPES.GET_TRENDING_USERS, data: res })    
+              break;
+
+            case TRENDS_TYPE.USERS.TOPICS:
+              AppDispatcher.dispatch({ type: ACTION_TYPES.GET_TRENDING_TOPICS, data: res })    
+              break;
+          }
+                    
+          resolve(res)
+        }
+      })
+    })
+    
+    return promise
   }
 }
 

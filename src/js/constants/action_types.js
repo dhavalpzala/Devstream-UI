@@ -2,7 +2,10 @@ const ACTION_TYPES = {
     'LOGGEDIN': 1,
     'LOGGEDOUT': 2,
     'GET_ACTIVITIES' : 3,
-    'UPDATE_PROFILE': 4
+    'UPDATE_PROFILE': 4,
+    'GET_TRENDING_PROJECTS': 5,
+    'GET_TRENDING_USERS': 6,
+    'GET_TRENDING_TOPICS': 7    
 }
 
 export default ACTION_TYPES

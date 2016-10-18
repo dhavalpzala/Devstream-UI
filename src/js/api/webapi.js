@@ -3,7 +3,7 @@ import * as request from 'superagent'
 
 const WebAPI = {
   login(accessToken) {
-    var promise = new Promise((resolve, reject) => {
+    let promise = new Promise((resolve, reject) => {
       request.post(`${APIUrl}/login?token=${accessToken}`)
         .end(function(err, res){
           if (err) {
@@ -21,7 +21,7 @@ const WebAPI = {
     let suffix = before ? `?before=${before}`: ''
     suffix = after ? `?after=${after}`: suffix
 
-    var promise = new Promise((resolve, reject) => {
+    let promise = new Promise((resolve, reject) => {
       request.get(APIUrl + `/events${suffix}`)
         .end(function(err, res){
           if (err) {
@@ -36,7 +36,7 @@ const WebAPI = {
   },
 
   updateUserProfile(userId, data) {
-    var promise = new Promise((resolve, reject) => {
+    let promise = new Promise((resolve, reject) => {
     request.put(`${APIUrl}/user/${userId}`)
       .set('Content-Type', 'application/json')
       .send(data)
@@ -53,7 +53,7 @@ const WebAPI = {
   },
 
   deleteUserProfile(data) {
-    var promise = new Promise((resolve, reject) => {
+    let promise = new Promise((resolve, reject) => {
     request.delete(`${APIUrl}/user/${userId}`)
       .set('Content-Type', 'application/json')
       .send(data)
@@ -62,6 +62,22 @@ const WebAPI = {
           reject(err)
         } else {
           resolve(res)
+        }
+      })
+    })
+
+    return promise
+  },
+
+  getTrends(type) {
+    const DAYS = 7
+    let promise = new Promise((resolve, reject) => {
+    request.get(`${APIUrl}/trends/${type}?days=${DAYS}`)
+      .end(function(err, res){
+        if (err) {
+          reject(err)
+        } else {
+          resolve(res.body)
         }
       })
     })
