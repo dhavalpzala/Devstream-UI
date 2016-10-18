@@ -156,6 +156,10 @@ const AppService = {
     })
 
     return promise
+  }, 
+
+  getTrends(type) {
+    return WebAPI.getTrends(type)
   }
 }
 

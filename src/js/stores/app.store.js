@@ -3,6 +3,7 @@ import AppAction from '../actions/app.action'
 import EventEmitter from 'events'
 import ACTION_TYPES from '../constants/action_types'
 import PROVIDERS from '../constants/providers'
+import TRENDS_TYPE from '../constants/trends_type'
 
 const CHANGE_EVENT = 'change'
 const PROFILE_CHANGE_EVENT = 'profile_change'
@@ -12,6 +13,7 @@ export class AppStore extends EventEmitter {
         super()
 
         this.activities = null
+        this.trends = {}
         this.isLoggedIn = AppAction.isLoggedIn()
 
         // get user
@@ -95,6 +97,21 @@ appStoreInstance.dispatchToken = AppDispatcher.register(action => {
 
     case ACTION_TYPES.GET_ACTIVITIES:
       appStoreInstance.activities = action.data
+      appStoreInstance.emitChange()
+      break
+
+    case ACTION_TYPES.GET_TRENDING_PROJECTS:
+      appStoreInstance.trends[TRENDS_TYPE.PROJECTS] = action.data
+      appStoreInstance.emitChange()
+      break
+
+    case ACTION_TYPES.GET_TRENDING_USERS:
+      appStoreInstance.trends[TRENDS_TYPE.USERS] = action.data
+      appStoreInstance.emitChange()
+      break
+
+    case ACTION_TYPES.GET_TRENDING_TOPICS:
+      appStoreInstance.trends[TRENDS_TYPE.TOPICS] = action.data
       appStoreInstance.emitChange()
       break
 
