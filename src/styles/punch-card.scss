@@ -1,0 +1,34 @@
+.punch-card {
+  position: relative;
+
+  .punch-card-weeks {
+    margin-left: 35px;
+
+    .punch-week {
+      display: inline-block;
+      vertical-align: top;
+      
+      .punch-day {
+        width: 12px;
+        height: 12px;
+        margin: 0px 2px 2px 0px;
+        background: #eee;
+
+        &.inactive {
+          background: transparent;        
+        }
+      }
+    }
+  }
+
+  .punch-display-days {
+    position: absolute;
+    height: 100%;
+
+    .punch-display-day {
+      height: 33%;
+      font-size: 12px;
+      vertical-align: bottom;
+    }
+  }
+}

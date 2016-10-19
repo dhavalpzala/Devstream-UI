@@ -4,6 +4,7 @@ import StackOverflow from './authentication/stackoverflow'
 import appStoreInstance from '../stores/app.store'
 import AppAction from '../actions/app.action'
 import PROVIDERS from '../constants/providers'
+import PunchCard from './punch_card'
 
 export default class Profile extends React.Component {
   constructor () {
@@ -67,6 +68,9 @@ export default class Profile extends React.Component {
         </div>
         <div>
           { profiles }
+        </div>
+        <div className="punch-card-container">
+          <PunchCard />
         </div>
       </div>
     )
