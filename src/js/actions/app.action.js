@@ -96,7 +96,22 @@ const AppAction = {
     })
     
     return promise
-  }
+  },
+
+  getPunchCard(userId) {
+    let promise = new Promise((resolve, reject) => {
+      AppService.getPunchCard(userId).then((res, err) => {
+        if (err) {
+          reject(err)
+        } else {
+          AppDispatcher.dispatch({ type: ACTION_TYPES.GET_PUNCH_CARD, data: res })          
+          resolve(res)
+        }
+      })
+    })
+    
+    return promise
+  },
 }
 
 export default AppAction

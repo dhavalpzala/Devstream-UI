@@ -4,6 +4,7 @@ import StackOverflow from './authentication/stackoverflow'
 import appStoreInstance from '../stores/app.store'
 import AppAction from '../actions/app.action'
 import PROVIDERS from '../constants/providers'
+import PunchCard from './punch_card'
 
 export default class Profile extends React.Component {
   constructor () {
@@ -15,9 +16,18 @@ export default class Profile extends React.Component {
   }
 
   componentDidMount () {
+    if (appStoreInstance.user) {
+      const userId = appStoreInstance.user.employeeId
+
+      if (userId) {
+        AppAction.getPunchCard(userId)
+      }
+    }
+
     appStoreInstance.addProfileChangeListener(() => {
       this.setState({
-        profiles: appStoreInstance.profiles
+        profiles: appStoreInstance.profiles,
+        punchCard: appStoreInstance.punchCard
       })
     })
   }
@@ -67,6 +77,9 @@ export default class Profile extends React.Component {
         </div>
         <div>
           { profiles }
+        </div>
+        <div className="punch-card-container">
+          <PunchCard data= { this.state.punchCard }/>
         </div>
       </div>
     )

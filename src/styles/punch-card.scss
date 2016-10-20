@@ -1,0 +1,50 @@
+.punch-card {
+  position: relative;
+
+  .punch-card-weeks {
+    margin-left: 35px;
+
+    .punch-week {
+      display: inline-block;
+      vertical-align: top;
+      
+      .punch-day {
+        width: 12px;
+        height: 12px;
+        margin: 0px 2px 2px 0px;
+        background: #eee;
+
+        &.inactive {
+          background: transparent;        
+        }
+
+        &.punch-contribution-0 {
+          background: #d6e685;
+        }
+
+        &.punch-contribution-1 {
+          background: #8cc665;
+        }
+
+        &.punch-contribution-2 {
+          background: #44a340;
+        }
+
+        &.punch-contribution-3 {
+          background: #1e6823;
+        }
+      }
+    }
+  }
+
+  .punch-display-days {
+    position: absolute;
+    height: 100%;
+
+    .punch-display-day {
+      height: 33%;
+      font-size: 12px;
+      vertical-align: bottom;
+    }
+  }
+}

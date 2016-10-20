@@ -1,5 +1,6 @@
 import { APIUrl } from '../constants/urls'
 import * as request from 'superagent'
+import moment from 'moment'
 
 const WebAPI = {
   login(accessToken) {
@@ -81,6 +82,22 @@ const WebAPI = {
         }
       })
     })
+
+    return promise
+  },
+
+  getPunchCard(userId) {
+    let timezone = moment().format('Z'),
+      promise = new Promise((resolve, reject) => {
+        request.get(`${APIUrl}/user/${userId}/punchcard?timeZone=${ encodeURIComponent(timezone) }`)
+          .end(function(err, res){
+            if (err) {
+              reject(err)
+            } else {
+              resolve(res.body)
+            }
+          })
+      })
 
     return promise
   }
