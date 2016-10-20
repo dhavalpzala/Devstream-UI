@@ -19,7 +19,7 @@ const SOQuestionActivity = (props) => {
         <div className="cf activity-header">
           <span className="username">
             <img className="avatar" src={props.user.imageURL} />{props.user.firstName} {props.user.lastName}
-          </span> commented on a <span className="question">question</span>
+          </span> asked a <span className="question">question</span>
           <span className="time">{moment(props.time, 'X').fromNow()}</span>
         </div> 
         <div className="activity-description">

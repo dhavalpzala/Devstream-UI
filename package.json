@@ -5,7 +5,7 @@
   "main": "js/main.jsx",
   "scripts": {
     "build": "webpack",
-    "server": "webpack-dev-server --output-public-path=/assets/ --content-base=public/ --hot --inline --open --https",
+    "server": "webpack-dev-server --output-public-path=/assets/ --content-base=public/ --hot --inline --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
