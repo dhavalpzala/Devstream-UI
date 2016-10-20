@@ -8,6 +8,7 @@
 # Node related files
 node_modules
 npm-debug.log
+*.json.gzip
 
 # Project files
 assets

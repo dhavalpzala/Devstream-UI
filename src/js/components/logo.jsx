@@ -2,31 +2,25 @@ import React from 'react';
 
 let Logo;
 export default Logo = () => (
-  <svg id="devstreamLogo" viewBox="0 0 250 128" xmlns="http://www.w3.org/2000/svg">
+  <svg id="devstreamLogo" viewBox="15 15 500 500" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <linearGradient id="logo-gradient" x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="0%" stopColor="#FF6B6B">
-              <animate attributeName="stop-color" values="#FF6B6B; #845EF7; #FF6B6B" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
-            </stop>
-            <stop offset="16.66%" stopColor="#FF922B">
-              <animate attributeName="stop-color" values="#FF922B; #5C7CFA; #FF922B" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
-            </stop>
-            <stop offset="33.32%" stopColor="#FCC419">
-              <animate attributeName="stop-color" values="#FCC419; #329AF0; #FCC419" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
-            </stop>
-            <stop offset="50%" stopColor="#51CF66">
-            </stop>
-            <stop offset="66.66%" stopColor="#329AF0">
-              <animate attributeName="stop-color" values="#329AF0; #FCC419; #329AF0" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
-            </stop>
-            <stop offset="83.32%" stopColor="#5C7CFA">
-              <animate attributeName="stop-color" values="#5C7CFA; #FF922B; #5C7CFA" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
-            </stop>
-            <stop offset="100%" stopColor="#845EF7">
-              <animate attributeName="stop-color" values="#845EF7; #FF6B6B; #845EF7" dur="3s" repeatCount="indefinite" begin="devstreamLogo.mouseover" end="devstreamLogo.mouseout"></animate>
-            </stop>
+      <linearGradient id="logo-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#FF6B6B">
+          </stop>
+          <stop offset="16.66%" stopColor="#FF922B">
+          </stop>
+          <stop offset="33.32%" stopColor="#FCC419">
+          </stop>
+          <stop offset="50%" stopColor="#51CF66">
+          </stop>
+          <stop offset="66.66%" stopColor="#329AF0">
+          </stop>
+          <stop offset="83.32%" stopColor="#5C7CFA">
+          </stop>
+          <stop offset="100%" stopColor="#845EF7">
+          </stop>
         </linearGradient>
-    </defs>
-    <path id="text1336" d="M 232.746 62.522 C 232.746 77.188 227.177 89.563 216.043 99.647 C 205.017 109.647 191.842 114.647 176.518 114.647 C 165.714 114.647 155.791 112.147 146.751 107.147 C 137.709 102.063 129.496 94.522 122.109 84.522 C 115.935 94.772 108.438 102.355 99.619 107.272 C 90.799 112.105 81.262 114.522 71.009 114.522 C 54.581 114.522 41.13 109.772 30.657 100.272 C 20.293 90.688 15.112 78.147 15.112 62.647 C 15.112 47.563 20.68 35.105 31.816 25.272 C 42.949 15.438 56.126 10.522 71.339 10.522 C 82.034 10.522 91.846 12.98 100.777 17.897 C 109.816 22.813 118.141 30.397 125.748 40.647 C 131.59 30.73 138.922 23.272 147.743 18.272 C 156.673 13.188 166.375 10.647 176.849 10.647 C 193.387 10.647 206.837 15.438 217.201 25.022 C 227.564 34.605 232.746 47.105 232.746 62.522 M 218.523 62.897 C 218.523 53.563 214.83 46.147 207.443 40.647 C 200.167 35.147 190.576 32.397 178.668 32.397 C 167.532 32.397 157.941 33.772 149.893 36.522 C 141.844 39.272 135.725 43.355 131.536 48.772 C 140.136 64.188 148.073 75.313 155.351 82.147 C 162.736 88.98 172.108 92.397 183.464 92.397 C 194.378 92.397 202.922 89.605 209.097 84.022 C 215.382 78.438 218.523 71.397 218.523 62.897 M 116.322 76.397 C 107.612 60.647 99.508 49.438 92.012 42.772 C 84.624 36.105 75.419 32.772 64.394 32.772 C 53.479 32.772 44.879 35.563 38.596 41.147 C 32.421 46.73 29.334 53.688 29.334 62.022 C 29.334 71.438 33.027 78.938 40.414 84.522 C 47.801 90.022 57.392 92.772 69.19 92.772 C 79.884 92.772 89.42 91.355 97.799 88.522 C 106.179 85.688 112.353 81.647 116.322 76.397" style={{fontSize: '256px', fontStyle: 'normal', fontVariantLigatures: 'normal', fontVariantCaps: 'normal', fontWeight: 'normal', fontStretch: 'normal', textAlign: 'start', lineHeight: '100%', writingMode: 'lrtb', textAnchor: 'start', fillOpacity: '1', stroke: 'none', strokeWidth: '1px', strokeLineCap: 'butt', strokeLineJoin: 'miter', strokeOpacity: '1', fontFamily: 'Georgia', fill: 'url(#logo-gradient)'}} />
-</svg>
+      </defs>
+    <path d=" M 317.28 30.21 C 343.99 23.98 372.58 26.00 398.10 36.07 C 428.60 47.92 454.45 71.16 469.58 100.16 C 480.53 120.89 485.90 144.51 485.11 167.94 C 484.32 197.29 473.59 226.24 455.16 249.09 C 433.16 276.76 400.11 295.41 364.96 299.53 C 354.81 300.90 344.54 300.50 334.32 300.61 C 334.22 270.84 334.30 241.07 334.28 211.30 C 342.85 211.07 351.60 212.06 359.99 209.82 C 373.50 206.47 385.20 196.79 391.21 184.26 C 397.00 172.38 397.47 158.05 392.47 145.82 C 387.39 133.05 376.48 122.74 363.42 118.43 C 349.97 113.82 334.48 115.72 322.56 123.47 C 309.25 131.89 300.65 147.21 300.59 162.98 C 300.56 218.99 300.59 275.00 300.58 331.01 C 300.49 342.96 301.05 354.97 299.30 366.83 C 295.29 397.28 280.46 426.08 258.25 447.25 C 239.26 465.49 214.91 478.12 189.00 482.94 C 163.73 487.70 137.12 485.24 113.23 475.69 C 86.60 465.19 63.51 446.05 48.15 421.90 C 33.35 398.90 25.78 371.34 26.76 344.00 C 27.58 312.95 39.60 282.39 59.95 258.95 C 80.37 235.18 109.16 218.73 140.07 213.46 C 152.43 211.13 165.07 211.36 177.59 211.41 C 177.61 241.17 177.58 270.93 177.61 300.69 C 169.07 300.90 160.36 299.95 151.99 302.12 C 138.69 305.40 127.09 314.76 120.99 327.01 C 115.23 338.37 114.36 352.10 118.62 364.11 C 123.40 378.02 134.98 389.38 149.01 393.83 C 163.06 398.50 179.27 396.00 191.24 387.27 C 203.47 378.64 211.21 364.01 211.27 349.02 C 211.32 290.69 211.28 232.35 211.29 174.02 C 211.31 167.04 211.17 160.05 211.72 153.09 C 213.83 124.26 225.52 96.27 244.42 74.41 C 263.21 52.46 289.10 36.68 317.28 30.21 Z" style={{fill: "url(#logo-gradient)"}} />
+  </svg>
 );
