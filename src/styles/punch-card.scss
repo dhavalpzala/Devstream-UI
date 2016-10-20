@@ -1,39 +1,14 @@
 .punch-card {
   position: relative;
+  display: inline-block;
 
   .punch-card-weeks {
     margin-left: 35px;
+    display: inline-block;
 
     .punch-week {
       display: inline-block;
       vertical-align: top;
-      
-      .punch-day {
-        width: 12px;
-        height: 12px;
-        margin: 0px 2px 2px 0px;
-        background: #eee;
-
-        &.inactive {
-          background: transparent;        
-        }
-
-        &.punch-contribution-0 {
-          background: #d6e685;
-        }
-
-        &.punch-contribution-1 {
-          background: #8cc665;
-        }
-
-        &.punch-contribution-2 {
-          background: #44a340;
-        }
-
-        &.punch-contribution-3 {
-          background: #1e6823;
-        }
-      }
     }
   }
 
@@ -42,9 +17,59 @@
     height: 100%;
 
     .punch-display-day {
-      height: 33%;
+      font-size: 12px;
+      margin-top: 12px;
+      vertical-align: bottom;
+    }
+  }
+
+  .punch-display-months {
+    margin-left: 35px;
+    margin-bottom: 5px;
+
+    .punch-display-month {
+      width: 8.33%;
       font-size: 12px;
       vertical-align: bottom;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+
+  .punch-day {
+    width: 12px;
+    height: 12px;
+    margin: 0px 2px 2px 0px;
+    background: #eee;
+
+    &.inactive {
+      background: transparent;        
+    }
+
+    &.punch-contribution-0 {
+      background: #d6e685;
+    }
+
+    &.punch-contribution-1 {
+      background: #8cc665;
+    }
+
+    &.punch-contribution-2 {
+      background: #44a340;
+    }
+
+    &.punch-contribution-3 {
+      background: #1e6823;
+    }
+  }
+
+  .punch-card-colors {
+    text-align: right;
+    margin-top: 10px;
+
+    .punch-day {
+      display: inline-block;
+      margin: 0px 3px;
     }
   }
 }
