@@ -16,9 +16,18 @@ export default class Profile extends React.Component {
   }
 
   componentDidMount () {
+    if (appStoreInstance.user) {
+      const userId = appStoreInstance.user.employeeId
+
+      if (userId) {
+        AppAction.getPunchCard(userId)
+      }
+    }
+
     appStoreInstance.addProfileChangeListener(() => {
       this.setState({
-        profiles: appStoreInstance.profiles
+        profiles: appStoreInstance.profiles,
+        punchCard: appStoreInstance.punchCard
       })
     })
   }
@@ -70,7 +79,7 @@ export default class Profile extends React.Component {
           { profiles }
         </div>
         <div className="punch-card-container">
-          <PunchCard />
+          <PunchCard data= { this.state.punchCard }/>
         </div>
       </div>
     )

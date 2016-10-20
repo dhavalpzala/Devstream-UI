@@ -14,6 +14,7 @@ export class AppStore extends EventEmitter {
 
         this.activities = null
         this.trends = {}
+        this.punchCard = null
         this.isLoggedIn = AppAction.isLoggedIn()
 
         // get user
@@ -32,6 +33,7 @@ export class AppStore extends EventEmitter {
       this.user = null
       this.profiles = null
       this.profileImageUrl = null
+      this.punchCard = null
 
       this.isLoggedIn = false
     }
@@ -117,6 +119,11 @@ appStoreInstance.dispatchToken = AppDispatcher.register(action => {
 
     case ACTION_TYPES.UPDATE_PROFILE:
       appStoreInstance.profiles = appStoreInstance.getProfiles()
+      appStoreInstance.emitProfileChange()
+      break
+    
+    case ACTION_TYPES.GET_PUNCH_CARD:
+      appStoreInstance.punchCard = action.data
       appStoreInstance.emitProfileChange()
       break
 

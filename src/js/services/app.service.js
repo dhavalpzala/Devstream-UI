@@ -160,6 +160,10 @@ const AppService = {
 
   getTrends(type) {
     return WebAPI.getTrends(type)
+  },
+
+  getPunchCard(userId) {
+    return WebAPI.getPunchCard(userId)
   }
 }
 
