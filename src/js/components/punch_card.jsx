@@ -12,6 +12,7 @@ export default class PunchCard extends React.Component {
       currentDate = moment(),
       indexDate = moment().subtract(1, 'year').subtract(1, 'day'),
       weekDays = [ 'Mon', 'Wed', 'Fri'],
+      months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       count = 0,
       data = this.props.data
 
@@ -61,8 +62,19 @@ export default class PunchCard extends React.Component {
     // add last week
     card.push(<div className='punch-week'>{ week }</div>)
 
+    // shift and unshift months
+    let currentMonth = currentDate.month(),
+     deletedMonths = months.splice(currentMonth + 1, 11 - currentMonth)
+
+    months.unshift(...deletedMonths)
+
     return (
       <div className="punch-card">
+        <div className="punch-display-months">
+          {
+            months.map((month) => (<div className="punch-display-month">{ month }</div>))
+          }
+        </div>
         <div className="punch-display-days">
           {
             weekDays.map((weekDay) => (<div className="punch-display-day">{ weekDay }</div>))
@@ -70,7 +82,16 @@ export default class PunchCard extends React.Component {
         </div>
         <div className="punch-card-weeks">
           { card }
-        </div>    
+        </div>
+        <div className="punch-card-colors">
+          Less
+          <div className="punch-day" />
+          <div className="punch-day punch-contribution-0" />
+          <div className="punch-day punch-contribution-1" />
+          <div className="punch-day punch-contribution-2" />
+          <div className="punch-day punch-contribution-3" />
+          More
+        </div>
       </div>
     )
   } 
