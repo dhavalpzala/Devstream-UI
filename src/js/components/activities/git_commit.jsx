@@ -4,7 +4,7 @@ import ACTIVITY_TYPES from '../../constants/activity_types'
 import moment from 'moment'
 
 const GitCommitActivity = (props) => {
-  const commits = props.data.payload.commits || []
+  const commits = props.data.payload.commits.splice(0,3) || []
   const commitNodes = commits.map((commit, idx) => (
     <div className="commit-info" key={idx}>
       <div className="sha">{commit.sha.substr(0,8)}</div>

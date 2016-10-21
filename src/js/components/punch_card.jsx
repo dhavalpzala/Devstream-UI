@@ -21,16 +21,17 @@ export default class PunchCard extends React.Component {
       week.push(<div className='punch-day inactive'></div>)      
     }
 
-    //while (!indexDate.isSame(currentDate)) {
-    while (indexDate.format('MM-DD-YYYY') !== currentDate.format('MM-DD-YYYY')) {
+    while (currentDate.diff(indexDate) >= 0) {  
       let day = indexDate.format('d'),
-        title = indexDate.format('DD MMM YYYY'),
+        title = `No contributions on ${indexDate.format('DD MMM YYYY')}`,
         classes = 'punch-day '
 
       if (data && data[count] && data[count].date) {
         if (indexDate.format('DD-MM-YYYY') === data[count].date) {
           const dataCount = data[count].count
           if (dataCount > 0) {
+            title = `${dataCount} contributions on ${indexDate.format('DD MMM YYYY')}`
+
             if ( dataCount < 2 ) {
               classes += 'punch-contribution-0'
             } 

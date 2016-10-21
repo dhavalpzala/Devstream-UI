@@ -29,6 +29,8 @@
     margin-left: 15px;
   }
   .profile-social {
+    margin-top: 10px;
+
     & > * {
       display: inline-block;
     }
@@ -41,12 +43,23 @@
 
     .profile-social-username {
       a {
-        text-decoration: underline;
+        background: #44a340;
+        border-radius: 4px;
+        padding: 4px 8px;
+        color: #fff;
       }
     }
   }
 
+  .profile-social-profiles, .profile-user {
+    width: 400px;
+    margin: 0 auto;
+  }
+
   .punch-card-container {
-    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    margin-top: 35px;
+    text-align: center;
+    padding-top: 20px;
   }
 }

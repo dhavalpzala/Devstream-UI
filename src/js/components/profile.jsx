@@ -63,7 +63,7 @@ export default class Profile extends React.Component {
 
     return (
       <div className="profile">
-        <div>
+        <div className="profile-user">
           <div className="profile-image">
             {(() => {
               if (this.state.profileImageUrl) {
@@ -75,7 +75,7 @@ export default class Profile extends React.Component {
           </div>
           <div className="profile-name">{ this.state.firstName + ' ' + this.state.lastName }</div>
         </div>
-        <div>
+        <div className="profile-social-profiles">
           { profiles }
         </div>
         <div className="punch-card-container">
